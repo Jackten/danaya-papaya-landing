@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danaya Yerzhanova — Story-Driven Content</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            papaya: {
+              50:  '#fff8f0',
+              100: '#ffecd6',
+              200: '#ffd4a8',
+              300: '#ffb872',
+              400: '#ff9240',
+              500: '#ff6f1a',
+              600: '#f05010',
+              700: '#c43a0c',
+              800: '#9c2f10',
+              900: '#7e2812',
+            }
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.6s ease-out forwards',
+            'fade-in': 'fadeIn 0.8s ease-out forwards',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      background-color: #fff8f0;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(255,146,64,0.12) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255,180,100,0.10) 0%, transparent 50%),
+        radial-gradient(circle at 60% 10%, rgba(255,220,160,0.15) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+
+    /* Subtle texture overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff9240' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .content-card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(2px);
+      border: 1px solid rgba(255, 146, 64, 0.12);
+      box-shadow:
+        0 2px 4px rgba(0,0,0,0.04),
+        0 8px 32px rgba(255,111,26,0.06),
+        0 0 0 1px rgba(255,255,255,0.8) inset;
+    }
+
+    .section-card {
+      background: white;
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    .accent-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ff6f1a;
+      display: inline-block;
+    }
+
+    .story-angle {
+      border-left: 2px solid #ffb872;
+      transition: border-color 0.2s ease;
+    }
+    .story-angle:hover {
+      border-left-color: #ff6f1a;
+    }
+
+    .cta-btn {
+      background: #ff6f1a;
+      color: white;
+      transition: all 0.18s ease;
+      box-shadow: 0 2px 8px rgba(255,111,26,0.25);
+    }
+    .cta-btn:hover {
+      background: #f05010;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(255,111,26,0.35);
+    }
+    .cta-btn:active {
+      transform: translateY(0);
+    }
+
+    .tag {
+      background: #fff8f0;
+      border: 1px solid rgba(255,111,26,0.2);
+      color: #c43a0c;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    [data-animate] {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    [data-animate].visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Fallback: if JS hasn't run, show content */
+    @media (prefers-reduced-motion: reduce) {
+      [data-animate] { opacity: 1; transform: none; }
+    }
+
+    .hero-accent {
+      color: #ff6f1a;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255,111,26,0.2), transparent);
+    }
+
+    /* Floating shapes */
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.06;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="font-sans relative">
+
+  <!-- Floating background shapes -->
+  <div class="shape" style="width:320px;height:320px;background:#ff6f1a;top:-80px;right:-80px;"></div>
+  <div class="shape" style="width:200px;height:200px;background:#ffb872;bottom:20%;left:-60px;"></div>
+  <div class="shape" style="width:140px;height:140px;background:#ff9240;top:40%;right:5%;"></div>
+
+  <!-- Main wrapper -->
+  <div class="relative z-10 max-w-2xl mx-auto px-4 py-12 md:py-20">
+
+    <!-- ─── HERO ─── -->
+    <div class="content-card rounded-3xl px-8 py-12 md:px-12 md:py-16 mb-6" data-animate>
+
+      <!-- Tag -->
+      <div class="flex items-center gap-2 mb-8">
+        <span class="accent-dot"></span>
+        <span class="tag rounded-full px-3 py-1 uppercase tracking-widest">Phuket, Thailand</span>
+      </div>
+
+      <!-- Name -->
+      <p class="text-sm font-medium text-gray-400 uppercase tracking-widest mb-3">Danaya Yerzhanova</p>
+
+      <!-- Headline -->
+      <h1 class="font-display text-4xl md:text-5xl font-medium text-gray-900 leading-tight mb-4">
+        Turning moments into stories<br/>people <span class="hero-accent italic">actually feel</span>
+      </h1>
+
+      <p class="text-gray-500 text-base mb-2">
+        Story-driven content for hospitality, travel, and lifestyle brands.
+      </p>
+      <p class="text-gray-600 text-base leading-relaxed mb-10">
+        I create content that feels natural, relatable, and worth watching — not just scrolling past.
+      </p>
+
+      <a href="#contact" class="cta-btn inline-block rounded-xl px-7 py-3.5 font-medium text-sm">
+        Work with me →
+      </a>
+    </div>
+
+    <!-- ─── ABOUT ─── -->
+    <div class="content-card rounded-3xl px-8 py-10 md:px-12 mb-6" data-animate>
+      <p class="text-xs font-semibold uppercase tracking-widest text-papaya-500 mb-5">About</p>
+      <p class="text-gray-800 text-base leading-relaxed mb-4">
+        Both my parents are journalists. I grew up watching them find the story in the ordinary — a habit I never shook.
+      </p>
+      <p class="text-gray-700 text-base leading-relaxed mb-4">
+        I spent years in hospitality at JW Marriott, learning how people experience places. What makes a stay memorable. What guests actually talk about. That's the lens I bring to content.
+      </p>
+      <p class="text-gray-700 text-base leading-relaxed">
+        Now based in Phuket, I blend humor, emotional honesty, and sharp observation into content that connects — for the brands behind the experiences, not just the aesthetics.
+      </p>
+    </div>
+
+    <!-- ─── WHAT I CREATE ─── -->
+    <div class="content-card rounded-3xl px-8 py-10 md:px-12 mb-6" data-animate>
+      <p class="text-xs font-semibold uppercase tracking-widest text-papaya-500 mb-5">What I create</p>
+
+      <div class="grid grid-cols-2 gap-3 mb-6">
+        <div class="section-card rounded-2xl p-4">
+          <p class="font-medium text-gray-900 text-sm mb-1">Short-form video</p>
+          <p class="text-gray-500 text-xs">Reels · TikTok · Stories</p>
+        </div>
+        <div class="section-card rounded-2xl p-4">
+          <p class="font-medium text-gray-900 text-sm mb-1">Lifestyle storytelling</p>
+          <p class="text-gray-500 text-xs">Moments that define a stay</p>
+        </div>
+        <div class="section-card rounded-2xl p-4">
+          <p class="font-medium text-gray-900 text-sm mb-1">Hotel & stay features</p>
+          <p class="text-gray-500 text-xs">Property · experience · feel</p>
+        </div>
+        <div class="section-card rounded-2xl p-4">
+          <p class="font-medium text-gray-900 text-sm mb-1">Product integrations</p>
+          <p class="text-gray-500 text-xs">Natural, not forced</p>
+        </div>
+      </div>
+
+      <div class="section-card rounded-2xl p-4">
+        <p class="font-medium text-gray-900 text-sm mb-1">Photo assets</p>
+        <p class="text-gray-500 text-xs">Captured alongside every video shoot</p>
+      </div>
+
+      <p class="text-gray-400 text-sm mt-5 italic">All content is designed to feel organic, not overly produced.</p>
+    </div>
+
+    <!-- ─── STORY ANGLES ─── -->
+    <div class="content-card rounded-3xl px-8 py-10 md:px-12 mb-6" data-animate>
+      <p class="text-xs font-semibold uppercase tracking-widest text-papaya-500 mb-2">Story angles</p>
+      <p class="text-gray-500 text-sm mb-7">The perspectives I bring to a brief. Not content directions — more like a way of seeing.</p>
+
+      <div class="space-y-5">
+        <div class="story-angle pl-5 py-1">
+          <p class="font-display text-lg font-medium text-gray-900 mb-1">Three generations, one trip</p>
+          <p class="text-gray-500 text-sm leading-relaxed">When grandparents, parents, and kids all experience the same place differently — that tension is the story. Rich, layered, universally recognizable.</p>
+        </div>
+
+        <div class="divider my-2"></div>
+
+        <div class="story-angle pl-5 py-1">
+          <p class="font-display text-lg font-medium text-gray-900 mb-1">The moment before the memory</p>
+          <p class="text-gray-500 text-sm leading-relaxed">The quiet coffee before the day starts. The walk back from dinner. Everyday in-between moments that actually define how a stay feels — and what people remember.</p>
+        </div>
+
+        <div class="divider my-2"></div>
+
+        <div class="story-angle pl-5 py-1">
+          <p class="font-display text-lg font-medium text-gray-900 mb-1">Place as character</p>
+          <p class="text-gray-500 text-sm leading-relaxed">A destination isn't a backdrop — it's an active participant in the story. This angle brings out what makes a place behave the way it does on people.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── DELIVERABLES ─── -->
+    <div class="content-card rounded-3xl px-8 py-10 md:px-12 mb-6" data-animate>
+      <p class="text-xs font-semibold uppercase tracking-widest text-papaya-500 mb-5">Deliverables</p>
+
+      <div class="space-y-3 mb-5">
+        <div class="flex items-center gap-3">
+          <span class="accent-dot flex-shrink-0"></span>
+          <p class="text-gray-700 text-sm">3–5 short-form videos (edited, ready to post)</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="accent-dot flex-shrink-0"></span>
+          <p class="text-gray-700 text-sm">Supporting photo assets</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <span class="accent-dot flex-shrink-0"></span>
+          <p class="text-gray-700 text-sm">Optional: raw footage for your own edits</p>
+        </div>
+      </div>
+
+      <p class="text-gray-400 text-sm italic">Scope tailored case by case.</p>
+    </div>
+
+    <!-- ─── WHY THIS WORKS ─── -->
+    <div class="content-card rounded-3xl px-8 py-10 md:px-12 mb-6" data-animate>
+      <p class="text-xs font-semibold uppercase tracking-widest text-papaya-500 mb-5">Why this works</p>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div class="section-card rounded-2xl p-4">
+          <p class="text-gray-900 font-medium text-sm">Builds trust</p>
+          <p class="text-gray-500 text-xs mt-1">Not just visibility</p>
+        </div>
+        <div class="section-card rounded-2xl p-4">
+          <p class="text-gray-900 font-medium text-sm">Feels native</p>
+          <p class="text-gray-500 text-xs mt-1">Not like an ad</p>
+        </div>
+        <div class="section-card rounded-2xl p-4">
+          <p class="text-gray-900 font-medium text-sm">Saves & shares</p>
+          <p class="text-gray-500 text-xs mt-1">Content worth keeping</p>
+        </div>
+        <div class="section-card rounded-2xl p-4">
+          <p class="text-gray-900 font-medium text-sm">Reusable</p>
+          <p class="text-gray-500 text-xs mt-1">Across your channels</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── CTA ─── -->
+    <div class="content-card rounded-3xl px-8 py-12 md:px-12 text-center" id="contact" data-animate>
+      <p class="font-display text-2xl md:text-3xl font-medium text-gray-900 mb-3">
+        Let's create something people<br/>
+        <span class="hero-accent italic">actually want to watch</span>
+      </p>
+      <p class="text-gray-400 text-sm mb-8">Hospitality · Travel · Lifestyle</p>
+
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="mailto:hello.danaya.papaya@gmail.com" class="cta-btn rounded-xl px-7 py-3.5 font-medium text-sm">
+          hello.danaya.papaya@gmail.com
+        </a>
+        <a href="https://instagram.com/danaya_papaya" target="_blank"
+           class="inline-block rounded-xl px-7 py-3.5 font-medium text-sm border border-papaya-200 text-papaya-600 hover:bg-papaya-50 transition-colors">
+          @danaya_papaya
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <p class="text-center text-gray-300 text-xs mt-8 pb-4">© 2025 Danaya Yerzhanova</p>
+
+  </div>
+
+  <script>
+    // Intersection observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
