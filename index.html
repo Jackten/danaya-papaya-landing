@@ -8,351 +8,356 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+  /* ============================================================
+     ✏️  CONTENT — edit everything here, nowhere else
+     ============================================================
+     LINE BREAKS: use \n inside a string to start a new line.
+     REMOVE A DASH: just delete the "- " from the list items.
+     ============================================================ */
+
+  const CONTENT = {
+
+    // ── Meta
+    name:     "Danaya Yerzhanova",
+    location: "Phuket, Thailand",
+    handle:   "@danaya_papaya",
+    email:    "hello.danaya.papaya@gmail.com",
+    year:     "2025",
+
+    // ── Hero
+    hero: {
+      headline:    "Turning moments into stories\npeople actually feel",
+      subheading:  "Story-driven content for hospitality, travel, and lifestyle brands.",
+      intro:       "I create content that feels natural, relatable, and worth watching — not just scrolling past.",
+      cta:         "Work with me",
+    },
+
+    // ── About
+    about: {
+      title: "About",
+      paragraphs: [
+        "Both my parents are journalists. I grew up watching them find the story in the ordinary — a habit I never shook.",
+        "I spent years in hospitality at JW Marriott, learning how people experience places. What makes a stay memorable. What guests actually talk about. That's the lens I bring to content.",
+        "Now based in Phuket, I blend humor, emotional honesty, and sharp observation into content that connects — for the brands behind the experiences, not just the aesthetics.",
+      ],
+    },
+
+    // ── What I Create (label + description pairs)
+    create: {
+      title: "What I create",
+      items: [
+        { label: "Short-form video",      desc: "Reels · TikTok · Stories" },
+        { label: "Lifestyle storytelling", desc: "Moments that define a stay" },
+        { label: "Hotel & stay features",  desc: "Property · experience · feel" },
+        { label: "Product integrations",   desc: "Natural, not forced" },
+        { label: "Photo assets",           desc: "Captured alongside every video shoot" },
+      ],
+      note: "All content is designed to feel organic, not overly produced.",
+    },
+
+    // ── Story Angles
+    angles: {
+      title: "Story angles",
+      intro: "The perspectives I bring to a brief. Not content directions — more like a way of seeing.",
+      items: [
+        {
+          headline: "Three generations, one trip",
+          body: "When grandparents, parents, and kids all experience the same place differently — that tension is the story. Rich, layered, universally recognizable.",
+        },
+        {
+          headline: "The moment before the memory",
+          body: "The quiet coffee before the day starts. The walk back from dinner. Everyday in-between moments that actually define how a stay feels — and what people remember.",
+        },
+        {
+          headline: "Place as character",
+          body: "A destination isn't a backdrop — it's an active participant in the story. This angle brings out what makes a place behave the way it does on people.",
+        },
+      ],
+    },
+
+    // ── Work With Me (opens in drawer)
+    work: {
+      drawerTitle: "Work with me",
+
+      deliverablesTitle: "Deliverables",
+      deliverables: [
+        "3–5 short-form videos (edited, ready to post)",
+        "Supporting photo assets",
+        "Optional: raw footage for your own edits",
+      ],
+      deliverablesNote: "Scope tailored case by case.",
+
+      whyTitle: "Why this works",
+      why: [
+        { label: "Builds trust",  desc: "Not just visibility" },
+        { label: "Feels native",  desc: "Not like an ad" },
+        { label: "Saves & shares", desc: "Content worth keeping" },
+        { label: "Reusable",      desc: "Across your channels" },
+      ],
+
+      closingLine: "Let's create something people\nactually want to watch",
+      closingTags: "Hospitality · Travel · Lifestyle",
+    },
+
+  };
+  /* ============================================================
+     End of editable content
+     ============================================================ */
+  </script>
+
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+            sans:    ['DM Sans', 'system-ui', 'sans-serif'],
             display: ['Playfair Display', 'Georgia', 'serif'],
           },
-          colors: {
-            papaya: {
-              50:  '#fff8f0',
-              100: '#ffecd6',
-              200: '#ffd4a8',
-              300: '#ffb872',
-              400: '#ff9240',
-              500: '#ff6f1a',
-              600: '#f05010',
-              700: '#c43a0c',
-              800: '#9c2f10',
-              900: '#7e2812',
-            }
-          },
-          animation: {
-            'fade-up': 'fadeUp 0.6s ease-out forwards',
-            'fade-in': 'fadeIn 0.8s ease-out forwards',
-          },
-          keyframes: {
-            fadeUp: {
-              '0%': { opacity: '0', transform: 'translateY(24px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            },
-            fadeIn: {
-              '0%': { opacity: '0' },
-              '100%': { opacity: '1' },
-            }
-          }
         }
       }
     }
   </script>
+
   <style>
+    :root {
+      --papaya:      #ff6f1a;
+      --papaya-mid:  #ffb872;
+      --papaya-soft: #fff8f0;
+      --papaya-dark: #c43a0c;
+    }
+
     * { box-sizing: border-box; }
 
     body {
-      background-color: #fff8f0;
+      background-color: var(--papaya-soft);
       background-image:
-        radial-gradient(circle at 20% 20%, rgba(255,146,64,0.12) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255,180,100,0.10) 0%, transparent 50%),
-        radial-gradient(circle at 60% 10%, rgba(255,220,160,0.15) 0%, transparent 40%);
+        radial-gradient(circle at 18% 18%, rgba(255,146,64,.12) 0%, transparent 50%),
+        radial-gradient(circle at 82% 82%, rgba(255,180,100,.10) 0%, transparent 50%),
+        radial-gradient(circle at 60%  8%, rgba(255,220,160,.15) 0%, transparent 40%);
       min-height: 100vh;
     }
-
-    /* Subtle texture overlay */
     body::before {
       content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff9240' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='2' fill='%23ff9240' fill-opacity='.03'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0;
     }
 
-    .content-card {
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(2px);
-      border: 1px solid rgba(255, 146, 64, 0.12);
-      box-shadow:
-        0 2px 4px rgba(0,0,0,0.04),
-        0 8px 32px rgba(255,111,26,0.06),
-        0 0 0 1px rgba(255,255,255,0.8) inset;
-    }
+    .shape { position:absolute; border-radius:50%; opacity:.06; pointer-events:none; }
 
-    .section-card {
+    .card {
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(255,146,64,.12);
+      box-shadow: 0 2px 4px rgba(0,0,0,.04), 0 8px 32px rgba(255,111,26,.06), 0 0 0 1px rgba(255,255,255,.8) inset;
+      border-radius: 1.5rem;
+    }
+    .inner-card {
       background: white;
-      border: 1px solid rgba(0,0,0,0.06);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: 0 1px 3px rgba(0,0,0,.04);
+      border-radius: 1rem;
     }
 
-    .accent-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #ff6f1a;
-      display: inline-block;
-    }
+    .dot { width:6px; height:6px; border-radius:50%; background:var(--papaya); display:inline-block; flex-shrink:0; }
+    .tag { background:var(--papaya-soft); border:1px solid rgba(255,111,26,.2); color:var(--papaya-dark); font-size:.75rem; font-weight:500; letter-spacing:.04em; border-radius:9999px; padding:.2rem .75rem; }
+    .label { font-size:.7rem; font-weight:600; text-transform:uppercase; letter-spacing:.1em; color:var(--papaya); }
+    .divider { height:1px; background:linear-gradient(to right,transparent,rgba(255,111,26,.18),transparent); }
 
-    .story-angle {
-      border-left: 2px solid #ffb872;
-      transition: border-color 0.2s ease;
-    }
-    .story-angle:hover {
-      border-left-color: #ff6f1a;
-    }
+    .angle { border-left:2px solid var(--papaya-mid); transition:border-color .2s; }
+    .angle:hover { border-left-color:var(--papaya); }
 
-    .cta-btn {
-      background: #ff6f1a;
-      color: white;
-      transition: all 0.18s ease;
-      box-shadow: 0 2px 8px rgba(255,111,26,0.25);
+    .btn-primary {
+      background:var(--papaya); color:white; border-radius:.75rem;
+      padding:.85rem 1.75rem; font-size:.875rem; font-weight:500;
+      box-shadow:0 2px 8px rgba(255,111,26,.25);
+      transition:all .18s ease; display:inline-block; cursor:pointer; text-decoration:none;
     }
-    .cta-btn:hover {
-      background: #f05010;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(255,111,26,0.35);
+    .btn-primary:hover { background:var(--papaya-dark); transform:translateY(-1px); box-shadow:0 4px 16px rgba(255,111,26,.35); }
+    .btn-outline {
+      border:1px solid rgba(255,111,26,.3); color:var(--papaya-dark); border-radius:.75rem;
+      padding:.85rem 1.75rem; font-size:.875rem; font-weight:500;
+      transition:all .18s ease; display:inline-block; cursor:pointer; text-decoration:none;
     }
-    .cta-btn:active {
-      transform: translateY(0);
-    }
+    .btn-outline:hover { background:var(--papaya-soft); }
 
-    .tag {
-      background: #fff8f0;
-      border: 1px solid rgba(255,111,26,0.2);
-      color: #c43a0c;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-    }
+    /* Animate in */
+    [data-a] { opacity:0; transform:translateY(18px); transition:opacity .55s ease, transform .55s ease; }
+    [data-a].on { opacity:1; transform:none; }
 
-    [data-animate] {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    /* ── Drawer ── */
+    #drawer-bg {
+      position:fixed; inset:0; background:rgba(0,0,0,.35); z-index:50;
+      opacity:0; pointer-events:none; transition:opacity .3s ease;
+      backdrop-filter:blur(4px);
     }
-    [data-animate].visible {
-      opacity: 1;
-      transform: translateY(0);
+    #drawer-bg.open { opacity:1; pointer-events:all; }
+    #drawer {
+      position:fixed; right:0; top:0; bottom:0; width:min(480px,100vw);
+      background:white; z-index:51; overflow-y:auto;
+      transform:translateX(100%); transition:transform .35s cubic-bezier(.4,0,.2,1);
+      box-shadow:-8px 0 40px rgba(0,0,0,.12);
     }
-    /* Fallback: if JS hasn't run, show content */
-    @media (prefers-reduced-motion: reduce) {
-      [data-animate] { opacity: 1; transform: none; }
-    }
+    #drawer.open { transform:translateX(0); }
 
-    .hero-accent {
-      color: #ff6f1a;
-    }
-
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(255,111,26,0.2), transparent);
-    }
-
-    /* Floating shapes */
-    .shape {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.06;
-      pointer-events: none;
-    }
+    .drawer-inner { padding:2.5rem 2rem; }
+    @media(min-width:480px){ .drawer-inner{ padding:3rem 2.5rem; } }
   </style>
 </head>
 <body class="font-sans relative">
 
-  <!-- Floating background shapes -->
+  <!-- bg shapes -->
   <div class="shape" style="width:320px;height:320px;background:#ff6f1a;top:-80px;right:-80px;"></div>
   <div class="shape" style="width:200px;height:200px;background:#ffb872;bottom:20%;left:-60px;"></div>
-  <div class="shape" style="width:140px;height:140px;background:#ff9240;top:40%;right:5%;"></div>
+  <div class="shape" style="width:140px;height:140px;background:#ff9240;top:42%;right:4%;"></div>
 
-  <!-- Main wrapper -->
-  <div class="relative z-10 max-w-2xl mx-auto px-4 py-12 md:py-20">
+  <!-- ═══════════════════════════════ MAIN ═══════════════════════════════ -->
+  <div class="relative z-10 max-w-2xl mx-auto px-4 py-12 md:py-20" id="page"></div>
 
-    <!-- ─── HERO ─── -->
-    <div class="content-card rounded-3xl px-8 py-12 md:px-12 md:py-16 mb-6" data-animate>
-
-      <!-- Tag -->
-      <div class="flex items-center gap-2 mb-8">
-        <span class="accent-dot"></span>
-        <span class="tag rounded-full px-3 py-1 uppercase tracking-widest">Phuket, Thailand</span>
-      </div>
-
-      <!-- Name -->
-      <p class="text-sm font-medium text-gray-400 uppercase tracking-widest mb-3">Danaya Yerzhanova</p>
-
-      <!-- Headline -->
-      <h1 class="font-display text-4xl md:text-5xl font-medium text-gray-900 leading-tight mb-4">
-        Turning moments into stories<br/>people <span class="hero-accent italic">actually feel</span>
-      </h1>
-
-      <p class="text-gray-500 text-base mb-2">
-        Story-driven content for hospitality, travel, and lifestyle brands.
-      </p>
-      <p class="text-gray-600 text-base leading-relaxed mb-10">
-        I create content that feels natural, relatable, and worth watching — not just scrolling past.
-      </p>
-
-      <a href="#contact" class="cta-btn inline-block rounded-xl px-7 py-3.5 font-medium text-sm">
-        Work with me →
-      </a>
-    </div>
-
-    <!-- ─── ABOUT ─── -->
-    <div class="content-card rounded-3xl px-8 py-10 md:px-12 mb-6" data-animate>
-      <p class="text-xs font-semibold uppercase tracking-widest text-papaya-500 mb-5">About</p>
-      <p class="text-gray-800 text-base leading-relaxed mb-4">
-        Both my parents are journalists. I grew up watching them find the story in the ordinary — a habit I never shook.
-      </p>
-      <p class="text-gray-700 text-base leading-relaxed mb-4">
-        I spent years in hospitality at JW Marriott, learning how people experience places. What makes a stay memorable. What guests actually talk about. That's the lens I bring to content.
-      </p>
-      <p class="text-gray-700 text-base leading-relaxed">
-        Now based in Phuket, I blend humor, emotional honesty, and sharp observation into content that connects — for the brands behind the experiences, not just the aesthetics.
-      </p>
-    </div>
-
-    <!-- ─── WHAT I CREATE ─── -->
-    <div class="content-card rounded-3xl px-8 py-10 md:px-12 mb-6" data-animate>
-      <p class="text-xs font-semibold uppercase tracking-widest text-papaya-500 mb-5">What I create</p>
-
-      <div class="grid grid-cols-2 gap-3 mb-6">
-        <div class="section-card rounded-2xl p-4">
-          <p class="font-medium text-gray-900 text-sm mb-1">Short-form video</p>
-          <p class="text-gray-500 text-xs">Reels · TikTok · Stories</p>
-        </div>
-        <div class="section-card rounded-2xl p-4">
-          <p class="font-medium text-gray-900 text-sm mb-1">Lifestyle storytelling</p>
-          <p class="text-gray-500 text-xs">Moments that define a stay</p>
-        </div>
-        <div class="section-card rounded-2xl p-4">
-          <p class="font-medium text-gray-900 text-sm mb-1">Hotel & stay features</p>
-          <p class="text-gray-500 text-xs">Property · experience · feel</p>
-        </div>
-        <div class="section-card rounded-2xl p-4">
-          <p class="font-medium text-gray-900 text-sm mb-1">Product integrations</p>
-          <p class="text-gray-500 text-xs">Natural, not forced</p>
-        </div>
-      </div>
-
-      <div class="section-card rounded-2xl p-4">
-        <p class="font-medium text-gray-900 text-sm mb-1">Photo assets</p>
-        <p class="text-gray-500 text-xs">Captured alongside every video shoot</p>
-      </div>
-
-      <p class="text-gray-400 text-sm mt-5 italic">All content is designed to feel organic, not overly produced.</p>
-    </div>
-
-    <!-- ─── STORY ANGLES ─── -->
-    <div class="content-card rounded-3xl px-8 py-10 md:px-12 mb-6" data-animate>
-      <p class="text-xs font-semibold uppercase tracking-widest text-papaya-500 mb-2">Story angles</p>
-      <p class="text-gray-500 text-sm mb-7">The perspectives I bring to a brief. Not content directions — more like a way of seeing.</p>
-
-      <div class="space-y-5">
-        <div class="story-angle pl-5 py-1">
-          <p class="font-display text-lg font-medium text-gray-900 mb-1">Three generations, one trip</p>
-          <p class="text-gray-500 text-sm leading-relaxed">When grandparents, parents, and kids all experience the same place differently — that tension is the story. Rich, layered, universally recognizable.</p>
-        </div>
-
-        <div class="divider my-2"></div>
-
-        <div class="story-angle pl-5 py-1">
-          <p class="font-display text-lg font-medium text-gray-900 mb-1">The moment before the memory</p>
-          <p class="text-gray-500 text-sm leading-relaxed">The quiet coffee before the day starts. The walk back from dinner. Everyday in-between moments that actually define how a stay feels — and what people remember.</p>
-        </div>
-
-        <div class="divider my-2"></div>
-
-        <div class="story-angle pl-5 py-1">
-          <p class="font-display text-lg font-medium text-gray-900 mb-1">Place as character</p>
-          <p class="text-gray-500 text-sm leading-relaxed">A destination isn't a backdrop — it's an active participant in the story. This angle brings out what makes a place behave the way it does on people.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ─── DELIVERABLES ─── -->
-    <div class="content-card rounded-3xl px-8 py-10 md:px-12 mb-6" data-animate>
-      <p class="text-xs font-semibold uppercase tracking-widest text-papaya-500 mb-5">Deliverables</p>
-
-      <div class="space-y-3 mb-5">
-        <div class="flex items-center gap-3">
-          <span class="accent-dot flex-shrink-0"></span>
-          <p class="text-gray-700 text-sm">3–5 short-form videos (edited, ready to post)</p>
-        </div>
-        <div class="flex items-center gap-3">
-          <span class="accent-dot flex-shrink-0"></span>
-          <p class="text-gray-700 text-sm">Supporting photo assets</p>
-        </div>
-        <div class="flex items-center gap-3">
-          <span class="accent-dot flex-shrink-0"></span>
-          <p class="text-gray-700 text-sm">Optional: raw footage for your own edits</p>
-        </div>
-      </div>
-
-      <p class="text-gray-400 text-sm italic">Scope tailored case by case.</p>
-    </div>
-
-    <!-- ─── WHY THIS WORKS ─── -->
-    <div class="content-card rounded-3xl px-8 py-10 md:px-12 mb-6" data-animate>
-      <p class="text-xs font-semibold uppercase tracking-widest text-papaya-500 mb-5">Why this works</p>
-
-      <div class="grid grid-cols-2 gap-3">
-        <div class="section-card rounded-2xl p-4">
-          <p class="text-gray-900 font-medium text-sm">Builds trust</p>
-          <p class="text-gray-500 text-xs mt-1">Not just visibility</p>
-        </div>
-        <div class="section-card rounded-2xl p-4">
-          <p class="text-gray-900 font-medium text-sm">Feels native</p>
-          <p class="text-gray-500 text-xs mt-1">Not like an ad</p>
-        </div>
-        <div class="section-card rounded-2xl p-4">
-          <p class="text-gray-900 font-medium text-sm">Saves & shares</p>
-          <p class="text-gray-500 text-xs mt-1">Content worth keeping</p>
-        </div>
-        <div class="section-card rounded-2xl p-4">
-          <p class="text-gray-900 font-medium text-sm">Reusable</p>
-          <p class="text-gray-500 text-xs mt-1">Across your channels</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- ─── CTA ─── -->
-    <div class="content-card rounded-3xl px-8 py-12 md:px-12 text-center" id="contact" data-animate>
-      <p class="font-display text-2xl md:text-3xl font-medium text-gray-900 mb-3">
-        Let's create something people<br/>
-        <span class="hero-accent italic">actually want to watch</span>
-      </p>
-      <p class="text-gray-400 text-sm mb-8">Hospitality · Travel · Lifestyle</p>
-
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="mailto:hello.danaya.papaya@gmail.com" class="cta-btn rounded-xl px-7 py-3.5 font-medium text-sm">
-          hello.danaya.papaya@gmail.com
-        </a>
-        <a href="https://instagram.com/danaya_papaya" target="_blank"
-           class="inline-block rounded-xl px-7 py-3.5 font-medium text-sm border border-papaya-200 text-papaya-600 hover:bg-papaya-50 transition-colors">
-          @danaya_papaya
-        </a>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <p class="text-center text-gray-300 text-xs mt-8 pb-4">© 2025 Danaya Yerzhanova</p>
-
+  <!-- ═══════════════════════════════ DRAWER ════════════════════════════ -->
+  <div id="drawer-bg" onclick="closeDrawer()"></div>
+  <div id="drawer" role="dialog" aria-modal="true" aria-label="Work with me">
+    <div class="drawer-inner" id="drawer-content"></div>
   </div>
 
+  <!-- ══════════════════════════════ RENDER ════════════════════════════ -->
   <script>
-    // Intersection observer for scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, i * 80);
-          observer.unobserve(entry.target);
+    /* nl2br helper */
+    const nl = s => s.replace(/\n/g, '<br>');
+
+    /* ── Build page ── */
+    const page = document.getElementById('page');
+    page.innerHTML = `
+
+      <!-- HERO -->
+      <div class="card px-8 py-12 md:px-12 md:py-16 mb-6" data-a>
+        <div class="flex items-center gap-2 mb-8">
+          <span class="dot"></span>
+          <span class="tag">${CONTENT.location}</span>
+        </div>
+        <p class="text-xs font-medium text-gray-400 uppercase tracking-widest mb-3">${CONTENT.name}</p>
+        <h1 class="font-display text-4xl md:text-5xl font-medium text-gray-900 leading-tight mb-4" style="color:#111">
+          ${nl(CONTENT.hero.headline).replace('actually feel','<span style="color:var(--papaya);font-style:italic">actually feel</span>')}
+        </h1>
+        <p class="text-gray-500 text-base mb-2">${CONTENT.hero.subheading}</p>
+        <p class="text-gray-600 text-base leading-relaxed mb-10">${CONTENT.hero.intro}</p>
+        <button class="btn-primary" onclick="openDrawer()">${CONTENT.hero.cta} →</button>
+      </div>
+
+      <!-- ABOUT -->
+      <div class="card px-8 py-10 md:px-12 mb-6" data-a>
+        <p class="label mb-5">${CONTENT.about.title}</p>
+        ${CONTENT.about.paragraphs.map(p => `<p class="text-gray-700 text-base leading-relaxed mb-4">${nl(p)}</p>`).join('')}
+      </div>
+
+      <!-- WHAT I CREATE -->
+      <div class="card px-8 py-10 md:px-12 mb-6" data-a>
+        <p class="label mb-5">${CONTENT.create.title}</p>
+        <div class="grid grid-cols-2 gap-3 mb-3">
+          ${CONTENT.create.items.slice(0,-1).map(i => `
+            <div class="inner-card p-4">
+              <p class="font-medium text-gray-900 text-sm mb-1">${i.label}</p>
+              <p class="text-gray-500 text-xs">${i.desc}</p>
+            </div>`).join('')}
+        </div>
+        <div class="inner-card p-4 mb-5">
+          <p class="font-medium text-gray-900 text-sm mb-1">${CONTENT.create.items.at(-1).label}</p>
+          <p class="text-gray-500 text-xs">${CONTENT.create.items.at(-1).desc}</p>
+        </div>
+        <p class="text-gray-400 text-sm italic">${CONTENT.create.note}</p>
+      </div>
+
+      <!-- STORY ANGLES -->
+      <div class="card px-8 py-10 md:px-12 mb-6" data-a>
+        <p class="label mb-2">${CONTENT.angles.title}</p>
+        <p class="text-gray-500 text-sm mb-7">${CONTENT.angles.intro}</p>
+        <div class="space-y-5">
+          ${CONTENT.angles.items.map((a,i) => `
+            ${i > 0 ? '<div class="divider my-1"></div>' : ''}
+            <div class="angle pl-5 py-1">
+              <p class="font-display text-lg font-medium text-gray-900 mb-1">${a.headline}</p>
+              <p class="text-gray-500 text-sm leading-relaxed">${a.body}</p>
+            </div>`).join('')}
+        </div>
+      </div>
+
+      <!-- WORK TEASER (opens drawer) -->
+      <div class="card px-8 py-8 md:px-12 mb-6 flex items-center justify-between gap-4 cursor-pointer group" data-a onclick="openDrawer()">
+        <div>
+          <p class="label mb-1">Deliverables & why it works</p>
+          <p class="text-gray-500 text-sm">What you get, and why it lands.</p>
+        </div>
+        <span style="color:var(--papaya);font-size:1.5rem;transition:transform .2s" class="group-hover:translate-x-1">→</span>
+      </div>
+
+      <!-- FOOTER -->
+      <p class="text-center text-gray-300 text-xs mt-4 pb-4">© ${CONTENT.year} ${CONTENT.name}</p>
+    `;
+
+    /* ── Build drawer ── */
+    const W = CONTENT.work;
+    document.getElementById('drawer-content').innerHTML = `
+      <div class="flex items-center justify-between mb-8">
+        <p class="font-display text-2xl font-medium text-gray-900">${W.drawerTitle}</p>
+        <button onclick="closeDrawer()" style="color:#aaa;font-size:1.5rem;line-height:1;background:none;border:none;cursor:pointer" aria-label="Close">✕</button>
+      </div>
+
+      <p class="label mb-4">${W.deliverablesTitle}</p>
+      <div class="space-y-3 mb-2">
+        ${W.deliverables.map(d => `
+          <div class="flex items-start gap-3">
+            <span class="dot mt-1.5"></span>
+            <p class="text-gray-700 text-sm">${d}</p>
+          </div>`).join('')}
+      </div>
+      <p class="text-gray-400 text-sm italic mb-8">${W.deliverablesNote}</p>
+
+      <div class="divider mb-8"></div>
+
+      <p class="label mb-4">${W.whyTitle}</p>
+      <div class="grid grid-cols-2 gap-3 mb-8">
+        ${W.why.map(w => `
+          <div class="inner-card p-4">
+            <p class="font-medium text-gray-900 text-sm">${w.label}</p>
+            <p class="text-gray-500 text-xs mt-1">${w.desc}</p>
+          </div>`).join('')}
+      </div>
+
+      <div class="divider mb-8"></div>
+
+      <p class="font-display text-xl font-medium text-gray-900 mb-1">${nl(W.closingLine).replace('actually want to watch','<span style="color:var(--papaya);font-style:italic">actually want to watch</span>')}</p>
+      <p class="text-gray-400 text-sm mb-8">${W.closingTags}</p>
+
+      <div class="flex flex-col gap-3">
+        <a href="mailto:${CONTENT.email}" class="btn-primary text-center">${CONTENT.email}</a>
+        <a href="https://instagram.com/${CONTENT.handle.replace('@','')}" target="_blank" class="btn-outline text-center">${CONTENT.handle}</a>
+      </div>
+    `;
+
+    /* ── Scroll animations ── */
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e,i) => {
+        if(e.isIntersecting){
+          setTimeout(() => e.target.classList.add('on'), i*80);
+          obs.unobserve(e.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, {threshold:.08});
+    document.querySelectorAll('[data-a]').forEach(el => obs.observe(el));
 
-    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    /* ── Drawer ── */
+    function openDrawer() {
+      document.getElementById('drawer').classList.add('open');
+      document.getElementById('drawer-bg').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+      document.getElementById('drawer').classList.remove('open');
+      document.getElementById('drawer-bg').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeDrawer(); });
   </script>
 </body>
 </html>
