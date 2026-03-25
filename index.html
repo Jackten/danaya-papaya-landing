@@ -72,7 +72,7 @@
         },
         {
           headline: "Place as character",
-          body: "A destination isn't a backdrop — it's an active participant in the story. This angle brings out what makes a place behave the way it does on people.",
+          body: "A destination isn't a backdrop.\nIt shapes behavior, mood, pace.\nI show how it softens, slows, opens people up.\nSo the story feels lived.\n\nPeople don't just see the place —\nthey attach to what it allows them to become.",
         },
       ],
     },
@@ -305,7 +305,7 @@
             ${i > 0 ? '<div class="divider my-1"></div>' : ''}
             <div class="angle pl-5 py-1">
               <p class="font-display text-lg font-medium text-gray-900 mb-1">${a.headline}</p>
-              <p class="text-gray-500 text-sm leading-relaxed">${a.body}</p>
+              <p class="text-gray-500 text-sm leading-relaxed">${nl(a.body).replace('what it allows them to become.','<em>what it allows them to become.</em>')}</p>
             </div>`).join('')}
         </div>
       </div>
