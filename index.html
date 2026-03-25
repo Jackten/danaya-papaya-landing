@@ -80,29 +80,14 @@
     // ── Work samples
     samples: {
       title: "The work",
-      intro: "A mix of what I do — brand features, product stories, lived experiences.",
-      categories: [
-        {
-          label: "Brand & Product",
-          items: [
-            { url: "https://www.instagram.com/reel/DTFjVyGEnyz/", caption: "IKEA store feature" },
-            { url: "https://www.instagram.com/reel/DVavgJoktVB/", caption: "Restaurant dish feature" },
-            { url: "https://www.instagram.com/reel/DScaQWoEg_Z/", caption: "Retail food product" },
-          ],
-        },
-        {
-          label: "Experience",
-          items: [
-            { url: "https://www.instagram.com/reel/DNHxPRgRmDe/", caption: "Gym feature" },
-            { url: "https://www.instagram.com/reel/DSUqpPakiyY/", caption: "Experience story" },
-          ],
-        },
-        {
-          label: "Storytelling",
-          items: [
-            { url: "https://www.instagram.com/reel/DWRZi3nkp9v/", caption: "Life as it happens" },
-          ],
-        },
+      intro: "All of it is storytelling. The brand just happens to be in it.",
+      items: [
+        { url: "https://www.instagram.com/reel/DNHxPRgRmDe/", caption: "What does Jiu-Jitsu mean to someone who's never done it?" },
+        { url: "https://www.instagram.com/reel/DWRZi3nkp9v/", caption: "Can you romanticize a muddy construction road?" },
+        { url: "https://www.instagram.com/reel/DTFjVyGEnyz/", caption: "What if a furniture store felt like a character study?" },
+        { url: "https://www.instagram.com/reel/DSUqpPakiyY/", caption: "A gym that doesn't feel like a gym." },
+        { url: "https://www.instagram.com/reel/DVavgJoktVB/", caption: "One dish. The story behind who made it." },
+        { url: "https://www.instagram.com/reel/DScaQWoEg_Z/", caption: "What if the product on the shelf had something to say?" },
       ],
     },
 
@@ -314,19 +299,18 @@
       <div class="card px-8 py-10 md:px-12 mb-6" data-a>
         <p class="label mb-2">${CONTENT.samples.title}</p>
         <p class="text-gray-500 text-sm mb-7">${CONTENT.samples.intro}</p>
-        ${CONTENT.samples.categories.map(cat => `
-          <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">${cat.label}</p>
-          <div class="space-y-2 mb-6">
-            ${cat.items.map(item => `
-              <a href="${item.url}" target="_blank" rel="noopener"
-                 class="inner-card flex items-center gap-3 p-3.5 group hover:border-papaya-200 transition-colors no-underline" style="display:flex;text-decoration:none">
-                <div style="width:36px;height:36px;border-radius:.5rem;background:#fff8f0;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6f1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                </div>
-                <span class="text-gray-700 text-sm font-medium">${item.caption}</span>
-                <span style="margin-left:auto;color:#ffb07a;font-size:1rem">→</span>
-              </a>`).join('')}
-          </div>`).join('')}
+        <div class="space-y-2">
+          ${CONTENT.samples.items.map(item => `
+            <a href="${item.url}" target="_blank" rel="noopener"
+               style="display:flex;align-items:center;gap:.75rem;text-decoration:none"
+               class="inner-card p-3.5 group">
+              <div style="width:36px;height:36px;border-radius:.5rem;background:#fff8f0;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6f1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <span class="text-gray-700 text-sm font-medium" style="flex:1;font-style:italic">${item.caption}</span>
+              <span style="color:#ffb07a;font-size:1rem;flex-shrink:0">→</span>
+            </a>`).join('')}
+        </div>
       </div>
 
       <!-- WORK TEASER (opens drawer) -->
