@@ -82,12 +82,12 @@
       title: "The work",
       intro: "All of it is storytelling. The brand just happens to be in it.",
       items: [
-        { url: "https://www.instagram.com/reel/DNHxPRgRmDe/", caption: "What does Jiu-Jitsu mean to someone who's never done it?" },
-        { url: "https://www.instagram.com/reel/DWRZi3nkp9v/", caption: "Can you romanticize a muddy construction road?" },
-        { url: "https://www.instagram.com/reel/DTFjVyGEnyz/", caption: "What if a furniture store felt like a character study?" },
-        { url: "https://www.instagram.com/reel/DSUqpPakiyY/", caption: "A gym that doesn't feel like a gym." },
-        { url: "https://www.instagram.com/reel/DVavgJoktVB/", caption: "One dish. The story behind who made it." },
-        { url: "https://www.instagram.com/reel/DScaQWoEg_Z/", caption: "What if the product on the shelf had something to say?" },
+        { url: "https://www.instagram.com/reel/DNHxPRgRmDe/", thumb: "thumb-DNHxPRgRmDe.jpg", caption: "What does Jiu-Jitsu mean to someone who's never done it?" },
+        { url: "https://www.instagram.com/reel/DWRZi3nkp9v/", thumb: "thumb-DWRZi3nkp9v.jpg", caption: "Can you romanticize a muddy construction road?" },
+        { url: "https://www.instagram.com/reel/DTFjVyGEnyz/", thumb: "thumb-DTFjVyGEnyz.jpg", caption: "What if a furniture store felt like a character study?" },
+        { url: "https://www.instagram.com/reel/DSUqpPakiyY/", thumb: "thumb-DSUqpPakiyY.jpg", caption: "A gym that doesn't feel like a gym." },
+        { url: "https://www.instagram.com/reel/DVavgJoktVB/", thumb: "thumb-DVavgJoktVB.jpg", caption: "One dish. The story behind who made it." },
+        { url: "https://www.instagram.com/reel/DScaQWoEg_Z/", thumb: "thumb-DScaQWoEg_Z.jpg", caption: "What if the product on the shelf had something to say?" },
       ],
     },
 
@@ -299,16 +299,19 @@
       <div class="card px-8 py-10 md:px-12 mb-6" data-a>
         <p class="label mb-2">${CONTENT.samples.title}</p>
         <p class="text-gray-500 text-sm mb-7">${CONTENT.samples.intro}</p>
-        <div class="space-y-2">
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.625rem">
           ${CONTENT.samples.items.map(item => `
             <a href="${item.url}" target="_blank" rel="noopener"
-               style="display:flex;align-items:center;gap:.75rem;text-decoration:none"
-               class="inner-card p-3.5 group">
-              <div style="width:36px;height:36px;border-radius:.5rem;background:#fff8f0;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff6f1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+               style="display:block;text-decoration:none;position:relative;border-radius:.875rem;overflow:hidden;aspect-ratio:9/16;background:#f3ede8"
+               class="group">
+              <img src="${item.thumb}" alt="${item.caption}"
+                   loading="lazy"
+                   style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,.68))"></div>
+              <p style="position:absolute;bottom:.6rem;left:.5rem;right:.5rem;color:white;font-size:.62rem;font-style:italic;font-weight:500;line-height:1.3">${item.caption}</p>
+              <div style="position:absolute;top:.5rem;right:.5rem;width:22px;height:22px;background:rgba(255,255,255,.9);border-radius:50%;display:flex;align-items:center;justify-content:center">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ff6f1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
               </div>
-              <span class="text-gray-700 text-sm font-medium" style="flex:1;font-style:italic">${item.caption}</span>
-              <span style="color:#ffb07a;font-size:1rem;flex-shrink:0">→</span>
             </a>`).join('')}
         </div>
       </div>
