@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Practical, no-fluff coaching for accomplished men who want a better dating life and stronger adult friendships." />
+  <title>Danaya Coaching - The Social Blueprint</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['DM Sans', 'system-ui', 'sans-serif'],
+            display: ['Playfair Display', 'Georgia', 'serif'],
+          },
+          colors: {
+            paper: '#f7efe3',
+            cream: '#fffaf2',
+            ink: '#2f2924',
+            papaya: '#e88d63',
+            moss: '#6f7d61',
+            blueink: '#7a9aad',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --paper: #f7efe3;
+      --cream: #fffaf2;
+      --ink: #2f2924;
+      --muted: #756d64;
+      --papaya: #e88d63;
+      --papaya-dark: #bd6647;
+      --moss: #6f7d61;
+      --blueprint: rgba(108, 147, 168, 0.18);
+      --line: rgba(92, 74, 57, 0.11);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      color: var(--ink);
+      background-color: var(--paper);
+      background-image:
+        radial-gradient(circle at 16% 12%, rgba(232, 141, 99, 0.14) 0, rgba(232, 141, 99, 0) 28%),
+        radial-gradient(circle at 90% 4%, rgba(111, 125, 97, 0.10) 0, rgba(111, 125, 97, 0) 25%),
+        linear-gradient(var(--blueprint) 1px, transparent 1px),
+        linear-gradient(90deg, var(--blueprint) 1px, transparent 1px),
+        linear-gradient(rgba(255, 250, 242, 0.76), rgba(255, 250, 242, 0.76));
+      background-size: auto, auto, 42px 42px, 42px 42px, auto;
+      background-position: center, center, -1px -1px, -1px -1px, center;
+      background-attachment: fixed;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(115deg, rgba(255, 255, 255, 0.34), transparent 35%, rgba(232, 141, 99, 0.08) 76%, transparent),
+        repeating-linear-gradient(0deg, rgba(73, 56, 43, 0.025) 0 1px, transparent 1px 7px);
+      mix-blend-mode: multiply;
+      z-index: 0;
+    }
+
+    .page-shell {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card {
+      background: rgba(255, 253, 248, 0.94);
+      border: 1px solid rgba(86, 63, 44, 0.10);
+      border-radius: 22px;
+      box-shadow:
+        0 24px 70px rgba(79, 55, 35, 0.10),
+        0 2px 8px rgba(79, 55, 35, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(10px);
+    }
+
+    .mini-card {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(86, 63, 44, 0.10);
+      border-radius: 16px;
+      box-shadow: 0 8px 22px rgba(79, 55, 35, 0.055);
+    }
+
+    .eyebrow {
+      color: var(--papaya-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      min-height: 46px;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      background: #2f2924;
+      color: #fffaf2;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 14px 30px rgba(47, 41, 36, 0.18);
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .btn-primary:hover {
+      background: #1f1a16;
+      transform: translateY(-1px);
+      box-shadow: 0 18px 38px rgba(47, 41, 36, 0.22);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.85rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid rgba(47, 41, 36, 0.16);
+      color: #3b332d;
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-decoration: none;
+      background: rgba(255, 250, 242, 0.72);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .btn-secondary:hover {
+      background: #fffdf8;
+      border-color: rgba(189, 102, 71, 0.32);
+      transform: translateY(-1px);
+    }
+
+    .blueprint-box {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blueprint-box::before,
+    .blueprint-box::after {
+      content: "";
+      position: absolute;
+      width: 42px;
+      height: 42px;
+      pointer-events: none;
+      opacity: 0.48;
+    }
+
+    .blueprint-box::before {
+      top: 18px;
+      left: 18px;
+      border-top: 1px solid var(--blueprint);
+      border-left: 1px solid var(--blueprint);
+    }
+
+    .blueprint-box::after {
+      right: 18px;
+      bottom: 18px;
+      border-right: 1px solid var(--blueprint);
+      border-bottom: 1px solid var(--blueprint);
+    }
+
+    .rule {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(189, 102, 71, 0.22), transparent);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .icon {
+      width: 1.2rem;
+      height: 1.2rem;
+      flex: 0 0 auto;
+    }
+
+    .plan-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.1rem;
+      height: 2.1rem;
+      border-radius: 50%;
+      background: rgba(232, 141, 99, 0.13);
+      color: var(--papaya-dark);
+      font-weight: 700;
+      font-size: 0.86rem;
+      border: 1px solid rgba(232, 141, 99, 0.20);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .btn-primary,
+      .btn-secondary {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+  <main class="page-shell mx-auto max-w-6xl px-5 py-6 sm:px-6 lg:px-8 lg:py-10">
+    <nav class="mx-auto mb-5 flex max-w-5xl items-center justify-between text-sm text-stone-600">
+      <a href="#top" class="font-display text-xl italic text-stone-800">Danaya Coaching</a>
+      <a href="#contact" class="hidden rounded-full border border-stone-300/70 bg-cream/70 px-4 py-2 font-semibold text-stone-700 sm:inline-flex">Start with a call</a>
+    </nav>
+
+    <section id="top" class="card blueprint-box reveal mx-auto max-w-5xl px-6 py-11 sm:px-10 lg:px-14 lg:py-16">
+      <div class="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
+        <div>
+          <p class="eyebrow mb-5">For men who are doing well, but doing it alone</p>
+          <h1 class="font-display text-5xl font-medium leading-[0.98] tracking-normal text-stone-900 sm:text-6xl lg:text-7xl">
+            You built the career. Now build the life around it.
+          </h1>
+          <p class="mt-7 max-w-2xl text-lg leading-8 text-stone-600 sm:text-xl">
+            Coaching that turns career competence into real confidence — for dating, friendship, and the logistics of adult connection. Practical plans. No fluff. No performative allyship. Just what works.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a class="btn-primary" href="#contact">
+              Book a first conversation
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="m13 6 6 6-6 6" />
+              </svg>
+            </a>
+            <a class="btn-secondary" href="#blueprint">See the blueprint</a>
+          </div>
+        </div>
+
+        <div class="mini-card p-5 sm:p-6">
+          <div class="mb-5 flex items-center justify-between gap-4">
+            <p class="eyebrow">First principles</p>
+            <svg class="h-9 w-9 text-blueink/70" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10 38V10h28v28H10Z" />
+              <path d="M16 16h16M16 23h16M16 30h10" />
+              <path d="M10 18H6M10 30H6M38 18h4M38 30h4" />
+            </svg>
+          </div>
+          <blockquote class="font-display text-2xl leading-snug text-stone-800">
+            "The problem is not that you are broken. It is that nobody ever handed you a sane operating plan for adult connection."
+          </blockquote>
+          <div class="rule my-6"></div>
+          <div class="grid grid-cols-2 gap-3 text-sm text-stone-600">
+            <div>
+              <p class="font-semibold text-stone-900">Dating</p>
+              <p class="mt-1">Profile, apps, pacing, follow-through.</p>
+            </div>
+            <div>
+              <p class="font-semibold text-stone-900">Friends</p>
+              <p class="mt-1">Routines, invites, groups, consistency.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto mt-6 grid max-w-5xl gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+      <div class="card reveal px-6 py-8 sm:px-8">
+        <p class="eyebrow mb-4">The problem</p>
+        <h2 class="font-display text-3xl font-medium leading-tight text-stone-900 sm:text-4xl">You built the career. Now what?</h2>
+        <p class="mt-5 leading-7 text-stone-600">
+          You can run a team, close a deal, manage a crisis, and still feel weirdly unprepared when the calendar is empty on a Friday night.
+        </p>
+        <p class="mt-4 leading-7 text-stone-600">
+          That is not a character flaw. It is a systems problem: fewer organic introductions, weaker community loops, rusty dating instincts, and no clear next action.
+        </p>
+      </div>
+
+      <div class="card reveal px-6 py-8 sm:px-8">
+        <p class="eyebrow mb-4">The real cost</p>
+        <div class="space-y-4">
+          <p class="leading-7 text-stone-600">
+            What if that person is out there <em>right now</em>, going through the same frustrating mess of modern dating you are? Dealing with the same ghosting, the same mixed signals, the same promising connections that dissolve into nothing.
+          </p>
+          <p class="leading-7 text-stone-600">
+            What if they are wondering when they are going to meet <em>you</em> — the same way you are wondering when you are going to meet them?
+          </p>
+          <div class="mt-5 rounded-2xl border border-papaya/20 bg-papaya/10 p-5">
+            <p class="font-display text-xl italic leading-snug text-stone-800">
+              The real tragedy is not the bad dates or the people who let you down. It is letting those experiences cost you the love that is still ahead of you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto mt-6 grid max-w-5xl gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+      <div class="card reveal px-6 py-8 sm:px-8">
+        <p class="eyebrow mb-4">What changes</p>
+        <div class="grid gap-4 sm:grid-cols-3">
+          <div class="mini-card p-5">
+            <svg class="mb-4 h-7 w-7 text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 19.5V5.8A2.8 2.8 0 0 1 6.8 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5" />
+              <path d="M8 7h8M8 11h7" />
+            </svg>
+            <h3 class="font-semibold text-stone-900">Clarity</h3>
+            <p class="mt-2 text-sm leading-6 text-stone-600">Know what to fix first and what to stop overthinking.</p>
+          </div>
+          <div class="mini-card p-5">
+            <svg class="mb-4 h-7 w-7 text-moss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 12h18" />
+              <path d="M12 3v18" />
+              <path d="m16 8 5-5" />
+              <path d="m8 16-5 5" />
+            </svg>
+            <h3 class="font-semibold text-stone-900">Practice</h3>
+            <p class="mt-2 text-sm leading-6 text-stone-600">Better reps, better scripts, better places to meet real people.</p>
+          </div>
+          <div class="mini-card p-5">
+            <svg class="mb-4 h-7 w-7 text-blueink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
+            <h3 class="font-semibold text-stone-900">Follow-through</h3>
+            <p class="mt-2 text-sm leading-6 text-stone-600">A realistic weekly cadence that does not depend on motivation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blueprint" class="card blueprint-box reveal mx-auto mt-6 max-w-5xl px-6 py-9 sm:px-10 lg:px-12">
+      <div class="max-w-2xl">
+        <p class="eyebrow mb-4">The approach</p>
+        <h2 class="font-display text-4xl font-medium leading-tight text-stone-900 sm:text-5xl">A social life is built like anything else: with a map, reps, and review.</h2>
+      </div>
+
+      <div class="mt-9 grid gap-5 lg:grid-cols-4">
+        <article class="mini-card p-5">
+          <span class="plan-number">01</span>
+          <h3 class="mt-5 font-semibold text-stone-900">Audit the current pattern</h3>
+          <p class="mt-3 text-sm leading-6 text-stone-600">Where your week leaks connection, what your dating setup says, and which assumptions are costing you.</p>
+        </article>
+        <article class="mini-card p-5">
+          <span class="plan-number">02</span>
+          <h3 class="mt-5 font-semibold text-stone-900">Build the actual plan</h3>
+          <p class="mt-3 text-sm leading-6 text-stone-600">Apps, venues, introductions, social routines, messaging, and follow-up all get assigned a job.</p>
+        </article>
+        <article class="mini-card p-5">
+          <span class="plan-number">03</span>
+          <h3 class="mt-5 font-semibold text-stone-900">Run clean experiments</h3>
+          <p class="mt-3 text-sm leading-6 text-stone-600">You try specific actions, then we look at reality instead of spinning stories about what it means.</p>
+        </article>
+        <article class="mini-card p-5">
+          <span class="plan-number">04</span>
+          <h3 class="mt-5 font-semibold text-stone-900">Make it sustainable</h3>
+          <p class="mt-3 text-sm leading-6 text-stone-600">The goal is not a burst of effort. It is a life where connection has a normal place on the calendar.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mx-auto mt-6 grid max-w-5xl gap-6 lg:grid-cols-2">
+      <div class="card reveal px-6 py-8 sm:px-8">
+        <p class="eyebrow mb-4">What you get</p>
+        <h2 class="font-display text-3xl font-medium text-stone-900 sm:text-4xl">Plain deliverables. No mysticism.</h2>
+        <div class="mt-7 space-y-4">
+          <div class="flex gap-4">
+            <svg class="mt-1 h-5 w-5 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 11 12 14 22 4" />
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+            </svg>
+            <p class="leading-7 text-stone-600"><strong class="text-stone-900">Dating app and profile cleanup</strong>, including photos, prompts, messages, and first-date logistics.</p>
+          </div>
+          <div class="flex gap-4">
+            <svg class="mt-1 h-5 w-5 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 11 12 14 22 4" />
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+            </svg>
+            <p class="leading-7 text-stone-600"><strong class="text-stone-900">A friendship pipeline</strong> that turns vague intentions into repeatable invites, groups, and follow-ups.</p>
+          </div>
+          <div class="flex gap-4">
+            <svg class="mt-1 h-5 w-5 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 11 12 14 22 4" />
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+            </svg>
+            <p class="leading-7 text-stone-600"><strong class="text-stone-900">Weekly accountability</strong> with concrete next steps, debriefs, and course correction.</p>
+          </div>
+          <div class="flex gap-4">
+            <svg class="mt-1 h-5 w-5 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 11 12 14 22 4" />
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+            </svg>
+            <p class="leading-7 text-stone-600"><strong class="text-stone-900">Scripts that still sound like you</strong> for invitations, follow-ups, boundaries, and honest conversations.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card reveal px-6 py-8 sm:px-8">
+        <p class="eyebrow mb-4">Why me</p>
+        <h2 class="font-display text-3xl font-medium text-stone-900 sm:text-4xl">From career confidence to life confidence.</h2>
+        <p class="mt-5 leading-7 text-stone-600">
+          I am passionate about helping men apply the competence they already built in their careers to the parts of life that matter just as much — dating, friendship, and showing up as yourself.
+        </p>
+        <p class="mt-4 leading-7 text-stone-600">
+          Maybe you reinvented yourself. Maybe the friendships from your past life did not graduate with you into the new one. That is not failure. That is a transition — and transitions need a plan.
+        </p>
+        <div class="mt-7 rounded-2xl border border-papaya/20 bg-papaya/10 p-5">
+          <p class="font-display text-2xl italic leading-snug text-stone-800">You are not broken. You are just operating without a map.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card reveal mx-auto mt-6 max-w-5xl px-6 py-9 sm:px-10 lg:px-12">
+      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div>
+          <p class="eyebrow mb-4">Fit</p>
+          <h2 class="font-display text-4xl font-medium leading-tight text-stone-900">Who this is for.</h2>
+          <p class="mt-5 leading-7 text-stone-600">
+            Men from 30 to 130 who have enough competence to know that willpower is not a plan.
+          </p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="mini-card p-5">
+            <h3 class="font-semibold text-stone-900">Good fit</h3>
+            <ul class="mt-4 space-y-3 text-sm leading-6 text-stone-600">
+              <li class="flex gap-3">
+                <svg class="mt-1 h-4 w-4 flex-none text-moss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                <span>You want direct feedback without humiliation.</span>
+              </li>
+              <li class="flex gap-3">
+                <svg class="mt-1 h-4 w-4 flex-none text-moss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                <span>You are willing to try specific actions.</span>
+              </li>
+              <li class="flex gap-3">
+                <svg class="mt-1 h-4 w-4 flex-none text-moss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+                <span>You care about dating and friendship, not conquest.</span>
+              </li>
+            </ul>
+          </div>
+          <div class="mini-card p-5">
+            <h3 class="font-semibold text-stone-900">Not the fit</h3>
+            <ul class="mt-4 space-y-3 text-sm leading-6 text-stone-600">
+              <li class="flex gap-3">
+                <svg class="mt-1 h-4 w-4 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 6-12 12" /></svg>
+                <span>You want tricks, pressure tactics, or status games.</span>
+              </li>
+              <li class="flex gap-3">
+                <svg class="mt-1 h-4 w-4 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 6-12 12" /></svg>
+                <span>You want someone else to blame for every outcome.</span>
+              </li>
+              <li class="flex gap-3">
+                <svg class="mt-1 h-4 w-4 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 6-12 12" /></svg>
+                <span>You are not open to changing your calendar.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card blueprint-box reveal mx-auto mt-6 max-w-5xl px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
+      <p class="eyebrow mb-5">What people say</p>
+      <blockquote class="font-display text-2xl leading-snug text-stone-800 sm:text-3xl">
+        "The practical and sensible way you see life is refreshing. You live in reality. Many people today do not."
+      </blockquote>
+      <div class="rule my-6"></div>
+      <div class="flex items-center gap-3">
+        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-papaya/15 text-papaya-dark font-semibold text-sm">JY</div>
+        <div>
+          <p class="font-semibold text-stone-900">Julian</p>
+          <p class="text-sm text-stone-500">Subscriber, U.S.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="card blueprint-box reveal mx-auto mt-6 max-w-5xl px-6 py-10 text-center sm:px-10 lg:px-14 lg:py-14">
+      <p class="eyebrow mb-4">Start simple</p>
+      <h2 class="font-display mx-auto max-w-3xl text-4xl font-medium leading-tight text-stone-900 sm:text-5xl">
+        Bring the facts. Leave with a plan.
+      </h2>
+      <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-stone-600">
+        Send a short note about where things feel stuck: dating, friendship, or both. The first conversation is practical, private, and low-pressure.
+      </p>
+      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a class="btn-primary w-full sm:w-auto" href="mailto:hello@danayacoaching.com?subject=Coaching%20inquiry">
+          Email hello@danayacoaching.com
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4h16v16H4z" />
+            <path d="m22 6-10 7L2 6" />
+          </svg>
+        </a>
+        <a class="btn-secondary w-full sm:w-auto" href="#blueprint">Review the method</a>
+      </div>
+    </section>
+
+    <footer class="mx-auto max-w-5xl px-2 py-8 text-center text-sm text-stone-500">
+      <p>Danaya Coaching - Practical advice for dating, friendship, and adult connection.</p>
+    </footer>
+  </main>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      revealEls.forEach((el) => observer.observe(el));
+    } else {
+      revealEls.forEach((el) => el.classList.add('in-view'));
+    }
+  </script>
+</body>
+</html>
