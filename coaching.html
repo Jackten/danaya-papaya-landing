@@ -214,6 +214,22 @@
       border: 1px solid rgba(232, 141, 99, 0.20);
     }
 
+    .hero-title {
+      font-size: clamp(1.85rem, 7.25vw, 2.45rem);
+    }
+
+    @media (min-width: 640px) {
+      .hero-title {
+        font-size: 3.75rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-title {
+        font-size: 4.5rem;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .reveal {
@@ -239,8 +255,9 @@
       <div class="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
         <div>
           <p class="eyebrow mb-5">For men who are doing well,<br />but doing it alone</p>
-          <h1 class="font-display text-5xl font-medium leading-[0.98] tracking-normal text-stone-900 sm:text-6xl lg:text-7xl">
-            You built the career. Now build the life around it.
+          <h1 class="hero-title font-display font-medium leading-[1.02] tracking-normal text-stone-900 sm:text-6xl lg:text-7xl">
+            <span class="whitespace-nowrap">You built the career.</span><br />
+            <span class="whitespace-nowrap">Now build the life around it.</span>
           </h1>
           <p class="mt-7 max-w-2xl text-lg leading-8 text-stone-600 sm:text-xl">
             Coaching that turns career competence into real confidence — for dating, friendship, and the logistics of adult connection. Practical plans. No fluff. No performative allyship. Just what works.
