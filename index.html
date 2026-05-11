@@ -29,7 +29,7 @@
     // ── Hero
     hero: {
       headline:    "Turning moments\ninto stories\npeople actually\nFEEL ✨",
-      subheading:  "Story-driven content for hospitality, travel, and products.",
+      subheading:  "Story-driven content for hospitality and everyday products.",
       intro:       "In a sea of polished sameness,\nstory is what makes people stay.",
       cta:         "Work with me",
     },
@@ -112,7 +112,7 @@
       ],
 
       closingLine: "Let's create something people\nactually want to watch",
-      closingTags: "Hospitality · Travel · Lifestyle",
+      closingTags: "Hospitality · Everyday Products · Lifestyle",
     },
 
   };
@@ -323,6 +323,16 @@
           <p class="text-gray-500 text-sm">What you get, and why it lands.</p>
         </div>
         <span style="color:var(--papaya);font-size:1.5rem;transition:transform .2s" class="group-hover:translate-x-1">→</span>
+      </div>
+
+      <!-- CONTACT -->
+      <div class="card px-8 py-10 md:px-12 mb-6 text-center" data-a>
+        <p class="label mb-3">Let's work together</p>
+        <p class="text-gray-600 text-base mb-6">Tell me what you need. I'll tell you how we'd make it stick.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="mailto:${CONTENT.email}" class="btn-primary text-center">${CONTENT.email}</a>
+          <a href="https://instagram.com/${CONTENT.handle.replace('@','')}" target="_blank" class="btn-outline text-center">${CONTENT.handle}</a>
+        </div>
       </div>
 
       <!-- FOOTER -->
