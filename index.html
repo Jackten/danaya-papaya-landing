@@ -30,7 +30,6 @@
     hero: {
       headline:    "Turning moments\ninto stories\npeople actually\nFEEL ✨",
       subheading:  "Story-driven content around hospitality, modern food culture, and thoughtfully made products for happy living.",
-      intro:       "<span style='color:var(--papaya);font-style:italic'>In a sea of polished sameness,</span><br>story is what makes people stay.",
       cta:         "Work with me",
     },
 
@@ -256,8 +255,13 @@
           ${nl(CONTENT.hero.headline).replace('people actually','<span style="color:var(--papaya)">people actually</span>').replace('FEEL ✨','<span style="color:var(--papaya);font-style:italic">FEEL ✨</span>')}
         </h1>
         <p class="text-gray-500 text-base mb-2">${CONTENT.hero.subheading}</p>
-        <p class="text-gray-600 text-base leading-relaxed mb-10">${CONTENT.hero.intro}</p>
         <button class="btn-primary" onclick="openDrawer()">${CONTENT.hero.cta} →</button>
+      </div>
+
+      <!-- TAGLINE -->
+      <div class="card px-8 py-10 md:px-12 mb-6 text-center" data-a>
+        <p class="font-display text-2xl md:text-3xl font-medium leading-snug" style="color:var(--papaya)">In a sea of polished sameness,</p>
+        <p class="text-gray-600 text-lg mt-2">story is what makes people stay.</p>
       </div>
 
       <!-- ABOUT -->
