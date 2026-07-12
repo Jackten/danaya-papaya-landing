@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Practical, no-fluff coaching for accomplished men who want a better dating life and stronger adult friendships." />
-  <title>Danaya Coaching - The Social Blueprint</title>
+  <meta name="description" content="Confidence coaching with Danaya: practical support to build courage through real-life reps, repair, and honest accountability." />
+  <title>Danaya Coaching — Build Your Confidence Muscle</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
@@ -219,6 +219,80 @@
       border: 1px solid rgba(232, 141, 99, 0.20);
     }
 
+    .service-tabs {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+      padding: 0.55rem;
+      border: 1px solid rgba(86, 63, 44, 0.12);
+      border-radius: 20px;
+      background: rgba(255, 250, 242, 0.72);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75);
+    }
+
+    .service-tab {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 0;
+      border-radius: 15px;
+      background: transparent;
+      color: var(--muted);
+      text-align: left;
+      cursor: pointer;
+      transition: background 180ms ease, box-shadow 180ms ease, color 180ms ease;
+    }
+
+    .service-tab[aria-selected="true"] {
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 8px 20px rgba(79, 55, 35, 0.08);
+    }
+
+    .tab-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.15rem;
+      height: 2.15rem;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      border: 1px solid rgba(232, 141, 99, 0.28);
+      color: var(--papaya-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .service-tab[aria-selected="true"] .tab-index {
+      color: #fffaf2;
+      background: var(--papaya-dark);
+      border-color: var(--papaya-dark);
+    }
+
+    .tab-panel[hidden] { display: none; }
+
+    .muscle-line {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .muscle-line::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 4px;
+      background: repeating-linear-gradient(90deg, var(--papaya) 0 22px, rgba(232, 141, 99, 0.18) 22px 29px);
+    }
+
+    .strike-blueprint {
+      display: inline;
+      background: linear-gradient(transparent 52%, rgba(232, 141, 99, 0.34) 52% 62%, transparent 62%);
+    }
+
     .hero-title {
       font-size: clamp(1.06rem, 5.25vw, 1.32rem) !important;
       max-width: 100%;
@@ -242,6 +316,8 @@
     }
 
     @media (min-width: 640px) {
+      .service-tabs { grid-template-columns: 1fr 1fr; }
+
       .hero-title {
         font-size: 3.75rem !important;
       }
@@ -270,297 +346,198 @@
 <body class="font-sans antialiased">
   <main class="page-shell mx-auto max-w-6xl px-5 py-6 sm:px-6 lg:px-8 lg:py-10">
     <nav class="mx-auto mb-5 flex max-w-5xl items-center justify-between text-sm text-stone-600">
-      <a href="#top" class="font-display text-xl italic text-stone-800">Social &amp; Dating Strategy with Danaya</a>
+      <a href="#top" class="font-display text-xl italic text-stone-800">Consulting with Danaya</a>
       <a href="#contact" class="hidden rounded-full border border-stone-300/70 bg-cream/70 px-4 py-2 font-semibold text-stone-700 sm:inline-flex">Start with a call</a>
     </nav>
 
     <section id="top" class="card blueprint-box reveal mx-auto max-w-5xl px-6 py-11 sm:px-10 lg:px-14 lg:py-16">
       <div class="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
         <div>
-          <p class="eyebrow mb-5">For men who are doing well,<br />but doing it alone</p>
-          <h1 class="hero-title font-display font-medium leading-[1.02] tracking-normal text-stone-900 sm:text-6xl lg:text-7xl">
-            <span class="whitespace-nowrap">You built the career.</span><br />
-            <span class="whitespace-nowrap">Now build the life around it.</span>
+          <p class="eyebrow mb-5">Confidence coaching for real life</p>
+          <h1 class="font-display text-5xl font-medium leading-[0.98] text-stone-900 sm:text-6xl lg:text-7xl">
+            Confidence is a muscle.<br /><em class="text-papaya-dark">Let’s train it.</em>
           </h1>
           <p class="hero-copy mt-7 max-w-2xl text-lg leading-8 text-stone-600 sm:text-xl">
-            Coaching that turns career competence into real confidence — for dating, friendship, and the logistics of adult connection. Practical plans. No fluff. No performative allyship. Just what works.
+            Whatever you want — the promotion, the opportunity, the room, the romance — takes courage to put yourself out there. We build that courage through real reps, honest repair, and someone in your corner when old habits come calling.
           </p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a class="btn-primary" href="#contact">
-              Book a first conversation
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14" />
-                <path d="m13 6 6 6-6 6" />
-              </svg>
-            </a>
-            <a class="btn-secondary" href="#blueprint">See the blueprint</a>
+            <a class="btn-primary" href="#contact">Book a first conversation</a>
+            <a class="btn-secondary" href="#services">Explore the work</a>
           </div>
         </div>
 
-        <div class="mini-card p-5 sm:p-6">
-          <div class="mb-5 flex items-center justify-between gap-4">
-            <p class="eyebrow">First principles</p>
-            <svg class="h-9 w-9 text-blueink/70" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M10 38V10h28v28H10Z" />
-              <path d="M16 16h16M16 23h16M16 30h10" />
-              <path d="M10 18H6M10 30H6M38 18h4M38 30h4" />
-            </svg>
-          </div>
-          <blockquote class="font-display text-2xl leading-snug text-stone-800">
-            "The problem is not that you are broken. It is that nobody ever handed you a sane operating plan for adult connection."
+        <aside class="mini-card muscle-line p-5 pb-7 sm:p-6 sm:pb-8">
+          <p class="eyebrow mb-5">The training principle</p>
+          <blockquote class="font-display text-3xl leading-snug text-stone-800">
+            Tear.<br />Repair.<br /><em>Come back stronger.</em>
           </blockquote>
           <div class="rule my-6"></div>
-          <div class="grid grid-cols-2 gap-3 text-sm text-stone-600">
-            <div>
-              <p class="font-semibold text-stone-900">Dating</p>
-              <p class="mt-1">Profile, apps, pacing, follow-through.</p>
-            </div>
-            <div>
-              <p class="font-semibold text-stone-900">Friends</p>
-              <p class="mt-1">Routines, invites, groups, consistency.</p>
-            </div>
-          </div>
+          <p class="leading-7 text-stone-600">
+            Not fake-it-till-you-make-it. Not a new personality. Small, brave acts repeated until your nervous system learns: <strong class="text-stone-900">I can do this.</strong>
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="mx-auto mt-6 grid max-w-5xl gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+      <div class="card reveal px-6 py-8 sm:px-8">
+        <p class="eyebrow mb-4">My starting point</p>
+        <h2 class="font-display text-4xl font-medium leading-tight text-stone-900">A wallflower from the Soviet Union.</h2>
+        <p class="mt-5 leading-7 text-stone-600">
+          I am not innately confident. I grew up learning to stay small, follow the expected path, and not attract too much attention. I am deeply suspicious of any blueprint that claims one version of confidence fits everyone.
+        </p>
+      </div>
+
+      <div class="card reveal px-6 py-8 sm:px-8">
+        <p class="eyebrow mb-4">Where I am now</p>
+        <h2 class="font-display text-4xl font-medium leading-tight text-stone-900">Now I do stand-up.</h2>
+        <p class="mt-5 leading-7 text-stone-600">
+          I still stutter when there are more than a dozen people in the room — even if five of them performed before me and another five will go after. Courage did not erase the fear. It taught me that fear does not get the final vote.
+        </p>
+        <div class="mt-6 rounded-2xl border border-papaya/20 bg-papaya/10 p-5">
+          <p class="font-display text-2xl italic leading-snug text-stone-800">I will not ask you to become fearless. I will help you move while fear is still talking.</p>
         </div>
       </div>
     </section>
 
-    <section class="mx-auto mt-6 grid max-w-5xl gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-      <div class="card reveal px-6 py-8 sm:px-8">
-        <p class="eyebrow mb-4">The problem</p>
-        <h2 class="font-display text-3xl font-medium leading-tight text-stone-900 sm:text-4xl">You built the career. Now what?</h2>
-        <p class="mt-5 leading-7 text-stone-600">
-          You can run a team, close a deal, manage a crisis, and still feel weirdly unprepared when the calendar is empty on a Friday night.
-        </p>
-        <p class="mt-4 leading-7 text-stone-600">
-          That is not a character flaw. It is a systems problem: fewer organic introductions, weaker community loops, rusty dating instincts, and no clear next action.
-        </p>
+    <section id="services" class="card reveal mx-auto mt-6 max-w-5xl px-6 py-9 sm:px-10 lg:px-12">
+      <div class="max-w-3xl">
+        <p class="eyebrow mb-4">Choose your focus</p>
+        <h2 class="font-display text-4xl font-medium leading-tight text-stone-900 sm:text-5xl">One consulting practice. Two ways in.</h2>
+        <p class="mt-5 text-lg leading-8 text-stone-600">Start with confidence itself, or open the more specific Dating for Results work.</p>
       </div>
 
-      <div class="card reveal px-6 py-8 sm:px-8">
-        <p class="eyebrow mb-4">The real cost</p>
-        <div class="space-y-4">
-          <p class="leading-7 text-stone-600">
-            What if that person is out there <em>right now</em>, going through the same frustrating mess of modern dating you are? Dealing with the same ghosting, the same mixed signals, the same promising connections that dissolve into nothing.
-          </p>
-          <p class="leading-7 text-stone-600">
-            What if they are wondering when they are going to meet <em>you</em> — the same way you are wondering when you are going to meet them?
-          </p>
-          <div class="mt-5 rounded-2xl border border-papaya/20 bg-papaya/10 p-5">
-            <p class="font-display text-xl italic leading-snug text-stone-800">
-              The real tragedy is not the bad dates or the people who let you down. It is letting those experiences cost you the love that is still ahead of you.
+      <div class="service-tabs mt-8" role="tablist" aria-label="Consulting services">
+        <button class="service-tab" id="tab-confidence" type="button" role="tab" aria-selected="true" aria-controls="panel-confidence" data-tab="confidence">
+          <span class="tab-index">01</span>
+          <span><strong class="block text-stone-900">Build Your Confidence</strong><small class="mt-1 block">The first muscle</small></span>
+        </button>
+        <button class="service-tab" id="tab-dating" type="button" role="tab" aria-selected="false" aria-controls="panel-dating" data-tab="dating" tabindex="-1">
+          <span class="tab-index">02</span>
+          <span><strong class="block text-stone-900">Dating for Results</strong><small class="mt-1 block">The focused blueprint</small></span>
+        </button>
+      </div>
+
+      <div id="panel-confidence" class="tab-panel mt-8" role="tabpanel" aria-labelledby="tab-confidence">
+        <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+          <div>
+            <p class="eyebrow mb-4">Product 01</p>
+            <h3 class="font-display text-4xl font-medium leading-tight text-stone-900">Build Your Confidence</h3>
+            <p class="mt-5 leading-7 text-stone-600">
+              For the moment you know what you want but keep shrinking at the edge of it. We turn the intimidating thing into a sequence of manageable reps — and I stay close enough to help you hold the line when you want to retreat.
+            </p>
+            <p class="mt-4 leading-7 text-stone-600">
+              This is personal strategy plus live accountability. No borrowed swagger. No <span class="strike-blueprint">personality blueprint</span>. We build a version of confidence that still feels like you.
             </p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mx-auto mt-6 grid max-w-5xl gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-      <div class="card reveal px-6 py-8 sm:px-8">
-        <p class="eyebrow mb-4">What changes</p>
-        <div class="grid gap-4 sm:grid-cols-3">
-          <div class="mini-card p-5">
-            <svg class="mb-4 h-7 w-7 text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 19.5V5.8A2.8 2.8 0 0 1 6.8 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5" />
-              <path d="M8 7h8M8 11h7" />
-            </svg>
-            <h3 class="font-semibold text-stone-900">Clarity</h3>
-            <p class="mt-2 text-sm leading-6 text-stone-600">Know what to fix first and what to stop overthinking.</p>
-          </div>
-          <div class="mini-card p-5">
-            <svg class="mb-4 h-7 w-7 text-moss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 12h18" />
-              <path d="M12 3v18" />
-              <path d="m16 8 5-5" />
-              <path d="m8 16-5 5" />
-            </svg>
-            <h3 class="font-semibold text-stone-900">Practice</h3>
-            <p class="mt-2 text-sm leading-6 text-stone-600">Better reps, better scripts, better places to meet real people.</p>
-          </div>
-          <div class="mini-card p-5">
-            <svg class="mb-4 h-7 w-7 text-blueink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M20 6 9 17l-5-5" />
-            </svg>
-            <h3 class="font-semibold text-stone-900">Follow-through</h3>
-            <p class="mt-2 text-sm leading-6 text-stone-600">A realistic weekly cadence that does not depend on motivation.</p>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <article class="mini-card p-5"><span class="plan-number">01</span><h4 class="mt-4 font-semibold text-stone-900">Name the brave thing</h4><p class="mt-2 text-sm leading-6 text-stone-600">A promotion, a pitch, a party, a stage, a date — what would you do if hesitation stopped choosing for you?</p></article>
+            <article class="mini-card p-5"><span class="plan-number">02</span><h4 class="mt-4 font-semibold text-stone-900">Make the rep smaller</h4><p class="mt-2 text-sm leading-6 text-stone-600">We design the next action to stretch you without sending you straight back into hiding.</p></article>
+            <article class="mini-card p-5"><span class="plan-number">03</span><h4 class="mt-4 font-semibold text-stone-900">Do it in real life</h4><p class="mt-2 text-sm leading-6 text-stone-600">Confidence grows from evidence. You collect yours through action, not affirmations alone.</p></article>
+            <article class="mini-card p-5"><span class="plan-number">04</span><h4 class="mt-4 font-semibold text-stone-900">Repair and repeat</h4><p class="mt-2 text-sm leading-6 text-stone-600">We debrief what hurt, keep what worked, and return stronger instead of turning one wobble into a verdict.</p></article>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="blueprint" class="card blueprint-box reveal mx-auto mt-6 max-w-5xl px-6 py-9 sm:px-10 lg:px-12">
-      <div class="max-w-2xl">
-        <p class="eyebrow mb-4">The approach</p>
-        <h2 class="font-display text-4xl font-medium leading-tight text-stone-900 sm:text-5xl">A social life is built like anything else: with a map, reps, and review.</h2>
-      </div>
-
-      <div class="mt-9 grid gap-5 lg:grid-cols-4">
-        <article class="mini-card p-5">
-          <span class="plan-number">01</span>
-          <h3 class="mt-5 font-semibold text-stone-900">Audit the current pattern</h3>
-          <p class="mt-3 text-sm leading-6 text-stone-600">Where your week leaks connection, what your dating setup says, and which assumptions are costing you.</p>
-        </article>
-        <article class="mini-card p-5">
-          <span class="plan-number">02</span>
-          <h3 class="mt-5 font-semibold text-stone-900">Build the actual plan</h3>
-          <p class="mt-3 text-sm leading-6 text-stone-600">Apps, venues, introductions, social routines, messaging, and follow-up all get assigned a job.</p>
-        </article>
-        <article class="mini-card p-5">
-          <span class="plan-number">03</span>
-          <h3 class="mt-5 font-semibold text-stone-900">Run clean experiments</h3>
-          <p class="mt-3 text-sm leading-6 text-stone-600">You try specific actions, then we look at reality instead of spinning stories about what it means.</p>
-        </article>
-        <article class="mini-card p-5">
-          <span class="plan-number">04</span>
-          <h3 class="mt-5 font-semibold text-stone-900">Make it sustainable</h3>
-          <p class="mt-3 text-sm leading-6 text-stone-600">The goal is not a burst of effort. It is a life where connection has a normal place on the calendar.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="mx-auto mt-6 grid max-w-5xl gap-6 lg:grid-cols-2">
-      <div class="card reveal px-6 py-8 sm:px-8">
-        <p class="eyebrow mb-4">What you get</p>
-        <h2 class="font-display text-3xl font-medium text-stone-900 sm:text-4xl">Plain deliverables. No mysticism.</h2>
-        <div class="mt-7 space-y-4">
-          <div class="flex gap-4">
-            <svg class="mt-1 h-5 w-5 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 11 12 14 22 4" />
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-            </svg>
-            <p class="leading-7 text-stone-600"><strong class="text-stone-900">Dating app and profile cleanup</strong>, including photos, prompts, messages, and first-date logistics.</p>
-          </div>
-          <div class="flex gap-4">
-            <svg class="mt-1 h-5 w-5 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 11 12 14 22 4" />
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-            </svg>
-            <p class="leading-7 text-stone-600"><strong class="text-stone-900">A friendship pipeline</strong> that turns vague intentions into repeatable invites, groups, and follow-ups.</p>
-          </div>
-          <div class="flex gap-4">
-            <svg class="mt-1 h-5 w-5 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 11 12 14 22 4" />
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-            </svg>
-            <p class="leading-7 text-stone-600"><strong class="text-stone-900">Weekly accountability</strong> with concrete next steps, debriefs, and course correction.</p>
-          </div>
-          <div class="flex gap-4">
-            <svg class="mt-1 h-5 w-5 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 11 12 14 22 4" />
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-            </svg>
-            <p class="leading-7 text-stone-600"><strong class="text-stone-900">Scripts that still sound like you</strong> for invitations, follow-ups, boundaries, and honest conversations.</p>
-          </div>
+        <div class="mt-8 grid gap-4 sm:grid-cols-3">
+          <div class="mini-card p-5"><p class="eyebrow mb-3">At work</p><p class="leading-7 text-stone-600">Ask for the promotion. Pitch the idea. Speak before you feel perfectly ready.</p></div>
+          <div class="mini-card p-5"><p class="eyebrow mb-3">In the room</p><p class="leading-7 text-stone-600">Walk into the party, introduce yourself, and let people actually meet you.</p></div>
+          <div class="mini-card p-5"><p class="eyebrow mb-3">In love</p><p class="leading-7 text-stone-600">Express interest, risk an honest answer, and stop disappearing from your own romantic life.</p></div>
         </div>
       </div>
 
-      <div class="card reveal px-6 py-8 sm:px-8">
-        <p class="eyebrow mb-4">Why me</p>
-        <h2 class="font-display text-3xl font-medium text-stone-900 sm:text-4xl">From career confidence to life confidence.</h2>
-        <p class="mt-5 leading-7 text-stone-600">
-          I am passionate about helping men apply the competence they already built in their careers to the parts of life that matter just as much — dating, friendship, and showing up as yourself.
-        </p>
-        <p class="mt-4 leading-7 text-stone-600">
-          Maybe you reinvented yourself. Maybe the friendships from your past life did not graduate with you into the new one. That is not failure. That is a transition — and transitions need a plan.
-        </p>
-        <div class="mt-7 rounded-2xl border border-papaya/20 bg-papaya/10 p-5">
-          <p class="quote-copy font-display text-2xl italic leading-snug text-stone-800">You are not broken. You are just operating without a map.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card reveal mx-auto mt-6 max-w-5xl px-6 py-9 sm:px-10 lg:px-12">
-      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-        <div>
-          <p class="eyebrow mb-4">Fit</p>
-          <h2 class="font-display text-4xl font-medium leading-tight text-stone-900">Who this is for.</h2>
-          <p class="mt-5 leading-7 text-stone-600">
-            Men from 30 to 130 who have enough competence to know that willpower is not a plan.
+      <div id="panel-dating" class="tab-panel mt-8" role="tabpanel" aria-labelledby="tab-dating" hidden>
+        <div class="max-w-3xl">
+          <p class="eyebrow mb-4">Product 02 · Dating for Results</p>
+          <h3 class="font-display text-4xl font-medium leading-tight text-stone-900 sm:text-5xl">You built the career. Now build the life around it.</h3>
+          <p class="mt-5 text-lg leading-8 text-stone-600">
+            Practical, no-fluff coaching for people who are competent at life and tired of feeling strangely unprepared for modern dating, friendship, and adult connection.
           </p>
+          <div class="mt-6 rounded-2xl border border-papaya/20 bg-papaya/10 p-5">
+            <p class="font-display text-2xl italic leading-snug text-stone-800">You are not broken. You may simply be operating without a map.</p>
+          </div>
         </div>
-        <div class="grid gap-4 sm:grid-cols-2">
-          <div class="mini-card p-5">
-            <h3 class="font-semibold text-stone-900">Good fit</h3>
-            <ul class="mt-4 space-y-3 text-sm leading-6 text-stone-600">
-              <li class="flex gap-3">
-                <svg class="mt-1 h-4 w-4 flex-none text-moss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
-                <span>You want direct feedback without humiliation.</span>
-              </li>
-              <li class="flex gap-3">
-                <svg class="mt-1 h-4 w-4 flex-none text-moss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
-                <span>You are willing to try specific actions.</span>
-              </li>
-              <li class="flex gap-3">
-                <svg class="mt-1 h-4 w-4 flex-none text-moss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
-                <span>You care about dating and friendship, not conquest.</span>
-              </li>
-            </ul>
-          </div>
-          <div class="mini-card p-5">
-            <h3 class="font-semibold text-stone-900">Not the fit</h3>
-            <ul class="mt-4 space-y-3 text-sm leading-6 text-stone-600">
-              <li class="flex gap-3">
-                <svg class="mt-1 h-4 w-4 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 6-12 12" /></svg>
-                <span>You want tricks, pressure tactics, or status games.</span>
-              </li>
-              <li class="flex gap-3">
-                <svg class="mt-1 h-4 w-4 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 6-12 12" /></svg>
-                <span>You want someone else to blame for every outcome.</span>
-              </li>
-              <li class="flex gap-3">
-                <svg class="mt-1 h-4 w-4 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 6-12 12" /></svg>
-                <span>You are not open to changing your calendar.</span>
-              </li>
-            </ul>
-          </div>
+
+        <div class="mt-9 grid gap-5 lg:grid-cols-4">
+          <article class="mini-card p-5"><span class="plan-number">01</span><h4 class="mt-5 font-semibold text-stone-900">Audit the pattern</h4><p class="mt-3 text-sm leading-6 text-stone-600">Where your week leaks connection, what your dating setup says, and which assumptions are costing you.</p></article>
+          <article class="mini-card p-5"><span class="plan-number">02</span><h4 class="mt-5 font-semibold text-stone-900">Build the plan</h4><p class="mt-3 text-sm leading-6 text-stone-600">Apps, venues, introductions, social routines, messaging, and follow-up each get a job.</p></article>
+          <article class="mini-card p-5"><span class="plan-number">03</span><h4 class="mt-5 font-semibold text-stone-900">Run experiments</h4><p class="mt-3 text-sm leading-6 text-stone-600">Try specific actions, then look at reality instead of spinning stories about what it means.</p></article>
+          <article class="mini-card p-5"><span class="plan-number">04</span><h4 class="mt-5 font-semibold text-stone-900">Make it yours</h4><p class="mt-3 text-sm leading-6 text-stone-600">Build a life where connection has a normal place on the calendar, not a burst of panicked effort.</p></article>
+        </div>
+
+        <div class="mt-8 grid gap-6 lg:grid-cols-2">
+          <div class="mini-card p-6"><p class="eyebrow mb-4">What we can work on</p><ul class="space-y-3 leading-7 text-stone-600"><li><strong class="text-stone-900">Dating profile and app cleanup</strong> — photos, prompts, messages, pacing.</li><li><strong class="text-stone-900">Meeting people offline</strong> — venues, introductions, routines, follow-through.</li><li><strong class="text-stone-900">Scripts that sound like you</strong> — invitations, boundaries, honest conversations.</li><li><strong class="text-stone-900">Weekly accountability</strong> — actions, debriefs, and course correction.</li></ul></div>
+          <div class="mini-card p-6"><p class="eyebrow mb-4">What this is not</p><ul class="space-y-3 leading-7 text-stone-600"><li>No tricks, pressure tactics, or status games.</li><li>No pretending rejection does not sting.</li><li>No generic dating persona pasted over your actual character.</li><li>No blaming every outcome on yourself — or everyone else.</li></ul></div>
         </div>
       </div>
     </section>
 
     <section class="card blueprint-box reveal mx-auto mt-6 max-w-5xl px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
-      <p class="eyebrow mb-5">What people say</p>
-      <blockquote class="font-display text-2xl leading-snug text-stone-800 sm:text-3xl">
-        "The practical and sensible way you see life is refreshing. You live in reality. Many people today do not."
-      </blockquote>
-      <div class="rule my-6"></div>
-      <div class="flex items-center gap-3">
-        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-papaya/15 text-papaya-dark font-semibold text-sm">JY</div>
-        <div>
-          <p class="font-semibold text-stone-900">Julian</p>
-          <p class="text-sm text-stone-500">Subscriber, U.S.</p>
-        </div>
+      <p class="eyebrow mb-5">Why the hand-holding matters</p>
+      <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <blockquote class="font-display text-3xl leading-snug text-stone-800 sm:text-4xl">“The old version of you will make a very convincing case for going home.”</blockquote>
+        <p class="leading-8 text-stone-600">I will not live your life for you. I will help you prepare, take the brave step, and make sense of what happened without retreating into the old story. You do the rep. We do the repair together.</p>
       </div>
     </section>
 
+    <section class="card reveal mx-auto mt-6 max-w-5xl px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
+      <p class="eyebrow mb-5">What people say</p>
+      <blockquote class="font-display text-2xl leading-snug text-stone-800 sm:text-3xl">“The practical and sensible way you see life is refreshing. You live in reality. Many people today do not.”</blockquote>
+      <div class="rule my-6"></div>
+      <p class="font-semibold text-stone-900">Julian <span class="font-normal text-stone-500">· Subscriber, U.S.</span></p>
+    </section>
+
     <section id="contact" class="card blueprint-box reveal mx-auto mt-6 max-w-5xl px-6 py-10 text-center sm:px-10 lg:px-14 lg:py-14">
-      <p class="eyebrow mb-4">Start simple</p>
-      <h2 class="font-display mx-auto max-w-3xl text-4xl font-medium leading-tight text-stone-900 sm:text-5xl">
-        Bring the facts. Leave with a plan.
-      </h2>
-      <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-stone-600">
-        Send a short note about where things feel stuck: dating, friendship, or both. The first conversation is practical, private, and low-pressure.
-      </p>
-      <p class="mx-auto mt-6 max-w-2xl font-display text-2xl italic leading-snug text-stone-800 sm:text-3xl">
-        Clear perspective. Practical next steps. On your side.
-      </p>
+      <p class="eyebrow mb-4">Start with one brave thing</p>
+      <h2 class="font-display mx-auto max-w-3xl text-4xl font-medium leading-tight text-stone-900 sm:text-5xl">Tell me where you keep backing away.</h2>
+      <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-stone-600">Bring the promotion, the party, the stage, the date, or the pattern you are tired of repeating. Our first conversation is practical, private, and low-pressure.</p>
+      <p class="mx-auto mt-6 max-w-2xl font-display text-2xl italic leading-snug text-stone-800 sm:text-3xl">You do not need to feel ready. You need a first rep.</p>
       <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <a class="btn-primary w-full sm:w-auto" href="mailto:hello@danayacoaching.com?subject=Coaching%20inquiry">
-          Email hello@danayacoaching.com
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4 4h16v16H4z" />
-            <path d="m22 6-10 7L2 6" />
-          </svg>
-        </a>
-        <a class="btn-secondary w-full sm:w-auto" href="#blueprint">Review the method</a>
+        <a class="btn-primary w-full sm:w-auto" href="mailto:hello@danayacoaching.com?subject=Confidence%20coaching%20inquiry">Email hello@danayacoaching.com</a>
+        <a class="btn-secondary w-full sm:w-auto" href="#services">Compare the services</a>
       </div>
     </section>
 
     <footer class="mx-auto max-w-5xl px-2 py-8 text-center text-sm text-stone-500">
-      <p>Danaya Coaching - Practical advice for dating, friendship, and adult connection.</p>
+      <p>Danaya Coaching — courage, practiced in real life.</p>
     </footer>
   </main>
 
   <script>
     const revealEls = document.querySelectorAll('.reveal');
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    const panels = [...document.querySelectorAll('[role="tabpanel"]')];
+
+    function activateTab(tab, updateHash = true) {
+      tabs.forEach((item) => {
+        const active = item === tab;
+        item.setAttribute('aria-selected', String(active));
+        item.tabIndex = active ? 0 : -1;
+      });
+      panels.forEach((panel) => {
+        panel.hidden = panel.id !== tab.getAttribute('aria-controls');
+      });
+      if (updateHash) history.replaceState(null, '', `#${tab.dataset.tab}`);
+    }
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => activateTab(tab));
+      tab.addEventListener('keydown', (event) => {
+        if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+        event.preventDefault();
+        const direction = event.key === 'ArrowRight' ? 1 : -1;
+        const nextTab = tabs[(index + direction + tabs.length) % tabs.length];
+        activateTab(nextTab);
+        nextTab.focus();
+      });
+    });
+
+    const requestedTab = tabs.find((tab) => `#${tab.dataset.tab}` === window.location.hash);
+    if (requestedTab) activateTab(requestedTab, false);
+
+    window.addEventListener('hashchange', () => {
+      const hashTab = tabs.find((tab) => `#${tab.dataset.tab}` === window.location.hash);
+      if (hashTab) activateTab(hashTab, false);
+    });
 
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
@@ -571,7 +548,6 @@
           }
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
       revealEls.forEach((el) => observer.observe(el));
     } else {
       revealEls.forEach((el) => el.classList.add('in-view'));
