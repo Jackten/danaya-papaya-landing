@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="WITH DANAYA is private, practical work for thoughtful adults who want more friendship, love, belonging and participation in real life." />
+  <meta name="build" content="with-danaya-v07" />
   <title>WITH DANAYA — People need people</title>
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1356,6 +1357,24 @@
     .field-footer p:last-child { text-align: right; }
 
     @media (max-width: 860px) {
+      .site-nav { flex-wrap: wrap; }
+
+      .nav-links {
+        display: flex;
+        order: 3;
+        flex: 0 0 100%;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 0;
+        padding-top: 2px;
+        border-top: 1px solid rgba(69, 54, 42, 0.09);
+      }
+
+      .nav-links a {
+        min-height: 38px;
+        font-size: 0.72rem;
+      }
+
       .route-layer { display: none; }
 
       .field-book section:nth-of-type(2)::after,
@@ -1399,8 +1418,10 @@
       .site-nav,
       .field-book { width: calc(100% - 16px); }
 
-      .site-nav { padding-right: 2px; padding-left: 2px; }
+      .site-nav { gap: 4px 14px; padding-right: 2px; padding-left: 2px; }
       .site-nav { backdrop-filter: none; }
+      .nav-links { gap: 8px; }
+      .nav-links a { font-size: 0.68rem; }
       .nav-cta { max-width: 126px; text-align: right; }
       .folio { padding: 90px 26px 100px 42px; }
       .folio-number { left: 12px; }
