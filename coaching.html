@@ -939,7 +939,8 @@
 
     .hero-journal {
       display: grid;
-      grid-template-columns: minmax(0, 850px);
+      grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+      gap: clamp(50px, 9vw, 120px);
       align-items: center;
       min-height: calc(100vh - 75px);
       padding-top: clamp(80px, 10vw, 130px);
@@ -1026,6 +1027,32 @@
       max-width: 610px;
       font-size: clamp(1.02rem, 1.7vw, 1.18rem);
       line-height: 1.75;
+    }
+
+    .practice-note {
+      align-self: end;
+      max-width: 310px;
+      padding: 24px 0 0 24px;
+      border-top: 1px solid rgba(117, 147, 163, 0.35);
+      border-left: 1px solid rgba(117, 147, 163, 0.35);
+    }
+
+    .practice-statement {
+      margin: 0 0 28px;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+      font-weight: 400;
+      line-height: 1.35;
+    }
+
+    .practice-statement span { display: block; }
+
+    .practice-note .practice-explanation {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.65;
     }
 
     .journal-link {
@@ -1359,6 +1386,7 @@
       .offers-grid { grid-template-columns: 1fr; }
 
       .hero-journal { min-height: auto; }
+      .practice-note { max-width: 460px; }
       .field-notes,
       .ordinary-list { grid-template-columns: 1fr; }
       .screen-thought { min-height: 75vh; }
@@ -1377,6 +1405,7 @@
       .folio { padding: 90px 26px 100px 42px; }
       .folio-number { left: 12px; }
       .hero-journal h1 { font-size: clamp(4rem, 21vw, 5.4rem); }
+      .hero-journal { gap: 64px; }
       .screen-thought h2 { font-size: clamp(3.55rem, 18vw, 5.6rem); }
       .section-intro h2,
       .story-copy h2,
@@ -1443,6 +1472,14 @@
         <p class="hero-lead">You can be thoughtful, kind and very good at your job — and still hesitate when it is time to text first, ask someone out, set a boundary or let people truly know you. We work on the real-life part.</p>
         <a class="journal-link" href="#field-notes"><span class="c-mark small" aria-hidden="true"></span> Open the notebook <span aria-hidden="true">↓</span></a>
       </div>
+      <aside class="practice-note" aria-label="How we practise courage">
+        <p class="practice-statement">
+          <span>I won’t lecture you.</span>
+          <span>I won’t motivate you.</span>
+          <span>I’ll practice with you.</span>
+        </p>
+        <p class="practice-explanation">Because courage isn’t built by talking about it.<br />It’s built by doing it.</p>
+      </aside>
     </section>
 
     <section id="field-notes" class="folio reveal" aria-labelledby="field-notes-title">
