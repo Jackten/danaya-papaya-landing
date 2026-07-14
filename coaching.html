@@ -1,45 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Practical, no-fluff coaching for accomplished men who want a better dating life and stronger adult friendships." />
-  <title>Danaya Coaching - The Social Blueprint</title>
+  <meta name="description" content="WITH DANAYA is private, practical work for thoughtful adults who want more friendship, love, belonging and participation in real life." />
+  <title>WITH DANAYA — People need people</title>
+  <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['DM Sans', 'system-ui', 'sans-serif'],
-            display: ['Playfair Display', 'Georgia', 'serif'],
-          },
-          colors: {
-            paper: '#f7efe3',
-            cream: '#fffaf2',
-            ink: '#2f2924',
-            papaya: '#e88d63',
-            moss: '#6f7d61',
-            blueink: '#7a9aad',
-          },
-        },
-      },
-    };
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&amp;display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%232c2723'/%3E%3Cpath d='M17 18l8 30 7-20 7 20 8-30' fill='none' stroke='%23df815b' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
   <style>
     :root {
-      --paper: #f7efe3;
-      --cream: #fffaf2;
-      --ink: #2f2924;
-      --muted: #756d64;
-      --papaya: #e88d63;
-      --papaya-dark: #bd6647;
-      --moss: #6f7d61;
-      --blueprint: rgba(108, 147, 168, 0.18);
-      --line: rgba(92, 74, 57, 0.11);
+      --paper: #f5ecdf;
+      --cream: #fffaf1;
+      --cream-solid: #fffaf4;
+      --ink: #2c2723;
+      --muted: #736b63;
+      --papaya: #df815b;
+      --papaya-dark: #ad5739;
+      --moss: #68745d;
+      --blue: #7593a3;
+      --blue-faint: rgba(117, 147, 163, 0.14);
+      --border: rgba(69, 54, 42, 0.13);
+      --shadow: 0 24px 70px rgba(70, 48, 31, 0.1), 0 3px 10px rgba(70, 48, 31, 0.04);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", system-ui, sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -50,17 +36,18 @@
     }
 
     body {
+      margin: 0;
       min-height: 100vh;
       max-width: 100vw;
       overflow-x: hidden;
       color: var(--ink);
-      background-color: var(--paper);
-      background-image:
-        radial-gradient(circle at 16% 12%, rgba(232, 141, 99, 0.14) 0, rgba(232, 141, 99, 0) 28%),
-        radial-gradient(circle at 90% 4%, rgba(111, 125, 97, 0.10) 0, rgba(111, 125, 97, 0) 25%),
-        linear-gradient(var(--blueprint) 1px, transparent 1px),
-        linear-gradient(90deg, var(--blueprint) 1px, transparent 1px),
-        linear-gradient(rgba(255, 250, 242, 0.76), rgba(255, 250, 242, 0.76));
+      font-family: var(--sans);
+      background:
+        radial-gradient(circle at 9% 7%, rgba(223, 129, 91, 0.17), transparent 25rem),
+        radial-gradient(circle at 93% 2%, rgba(104, 116, 93, 0.12), transparent 24rem),
+        linear-gradient(var(--blue-faint) 1px, transparent 1px),
+        linear-gradient(90deg, var(--blue-faint) 1px, transparent 1px),
+        var(--paper);
       background-size: auto, auto, 42px 42px, 42px 42px, auto;
       background-position: center, center, -1px -1px, -1px -1px, center;
       background-attachment: fixed;
@@ -70,499 +57,1613 @@
       content: "";
       position: fixed;
       inset: 0;
+      z-index: -1;
       pointer-events: none;
-      background-image:
-        linear-gradient(115deg, rgba(255, 255, 255, 0.34), transparent 35%, rgba(232, 141, 99, 0.08) 76%, transparent),
-        repeating-linear-gradient(0deg, rgba(73, 56, 43, 0.025) 0 1px, transparent 1px 7px);
+      background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.42), transparent 35%, rgba(223, 129, 91, 0.07) 77%, transparent),
+        repeating-linear-gradient(0deg, rgba(73, 56, 43, 0.022) 0 1px, transparent 1px 7px);
       mix-blend-mode: multiply;
-      z-index: 0;
     }
 
-    .page-shell {
-      position: relative;
-      z-index: 1;
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(117, 147, 163, 0.72);
+      outline-offset: 4px;
     }
 
-    .card {
-      background: rgba(255, 253, 248, 0.94);
-      border: 1px solid rgba(86, 63, 44, 0.10);
-      border-radius: 22px;
-      box-shadow:
-        0 24px 70px rgba(79, 55, 35, 0.10),
-        0 2px 8px rgba(79, 55, 35, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(10px);
+    .shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
     }
 
-    .mini-card {
-      background: rgba(255, 255, 255, 0.78);
-      border: 1px solid rgba(86, 63, 44, 0.10);
-      border-radius: 16px;
-      box-shadow: 0 8px 22px rgba(79, 55, 35, 0.055);
+    .site-nav {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      width: min(1080px, calc(100% - 32px));
+      margin: 14px auto 20px;
+      padding: 12px 14px 12px 18px;
+      border: 1px solid rgba(69, 54, 42, 0.11);
+      border-radius: 999px;
+      background: rgba(255, 250, 244, 0.88);
+      box-shadow: 0 9px 30px rgba(61, 43, 29, 0.08);
+      backdrop-filter: blur(16px);
     }
 
-    .eyebrow {
-      color: var(--papaya-dark);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+    .brand {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+      text-decoration: none;
+      white-space: nowrap;
     }
 
-    .btn-primary {
+    .brand-with {
+      font-family: var(--serif);
+      color: var(--muted);
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-left: auto;
+    }
+
+    .nav-links a {
+      color: #5d554d;
+      font-size: 0.82rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--papaya-dark); }
+
+    .nav-cta,
+    .button-primary,
+    .button-secondary {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.55rem;
+      gap: 9px;
       min-height: 46px;
-      padding: 0.85rem 1.2rem;
       border-radius: 999px;
-      background: #2f2924;
-      color: #fffaf2;
-      font-size: 0.92rem;
-      font-weight: 700;
+      font-size: 0.88rem;
+      font-weight: 600;
       text-decoration: none;
-      box-shadow: 0 14px 30px rgba(47, 41, 36, 0.18);
       transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
     }
 
-    .btn-primary:hover {
-      background: #1f1a16;
-      transform: translateY(-1px);
-      box-shadow: 0 18px 38px rgba(47, 41, 36, 0.22);
+    .nav-cta {
+      min-height: 38px;
+      padding: 0 17px;
+      color: var(--cream);
+      background: var(--ink);
     }
 
-    .btn-secondary {
+    .button-primary {
+      padding: 0 22px;
+      color: var(--cream);
+      background: var(--ink);
+      box-shadow: 0 14px 30px rgba(47, 41, 36, 0.18);
+    }
+
+    .button-primary:hover,
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      background: #181512;
+    }
+
+    .button-secondary {
+      padding: 0 22px;
+      border: 1px solid rgba(47, 41, 36, 0.17);
+      background: rgba(255, 250, 244, 0.72);
+    }
+
+    .button-secondary:hover {
+      transform: translateY(-1px);
+      border-color: rgba(173, 87, 57, 0.38);
+      background: var(--cream-solid);
+    }
+
+    .card {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      background: rgba(255, 250, 244, 0.93);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .blueprint::before,
+    .blueprint::after {
+      content: "";
+      position: absolute;
+      width: 44px;
+      height: 44px;
+      opacity: 0.56;
+      pointer-events: none;
+    }
+
+    .blueprint::before {
+      top: 18px;
+      left: 18px;
+      border-top: 1px solid rgba(117, 147, 163, 0.35);
+      border-left: 1px solid rgba(117, 147, 163, 0.35);
+    }
+
+    .blueprint::after {
+      right: 18px;
+      bottom: 18px;
+      border-right: 1px solid rgba(117, 147, 163, 0.35);
+      border-bottom: 1px solid rgba(117, 147, 163, 0.35);
+    }
+
+    .hero {
+      overflow: hidden;
+      padding: clamp(54px, 8vw, 94px) clamp(24px, 6vw, 76px) 38px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.75fr);
+      gap: clamp(36px, 7vw, 90px);
+      align-items: end;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--papaya-dark);
+      font-size: 0.69rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 730px;
+      margin-bottom: 25px;
+      font-family: var(--serif);
+      font-size: clamp(3.55rem, 8.7vw, 7.8rem);
+      font-weight: 400;
+      line-height: 0.89;
+      letter-spacing: -0.045em;
+    }
+
+    h1 em {
+      display: block;
+      color: var(--papaya-dark);
+      font-weight: 400;
+    }
+
+    .hero-lead {
+      max-width: 670px;
+      margin-bottom: 0;
+      color: #5f574f;
+      font-size: clamp(1.05rem, 1.8vw, 1.24rem);
+      line-height: 1.65;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 30px;
+    }
+
+    .with-note {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 285px;
+      padding: 23px;
+      border: 1px solid rgba(69, 54, 42, 0.11);
+      border-radius: 19px;
+      background: rgba(255, 255, 255, 0.61);
+    }
+
+    .with-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--blue);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .with-mark::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .with-note blockquote {
+      margin: 35px 0 18px;
+      font-family: var(--serif);
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      font-style: italic;
+      line-height: 1.2;
+    }
+
+    .with-note p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .action-strip {
+      display: flex;
+      gap: 9px;
+      overflow: hidden;
+      margin: 16px -10px 0;
+      padding: 10px;
+      mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);
+    }
+
+    .action-strip span {
+      flex: 0 0 auto;
+      padding: 9px 13px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: #5e554d;
+      background: rgba(255, 250, 244, 0.68);
+      font-family: var(--serif);
+      font-size: 0.98rem;
+      font-style: italic;
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: clamp(42px, 7vw, 74px) clamp(24px, 5vw, 60px);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      margin-bottom: 17px;
+      font-family: var(--serif);
+      font-size: clamp(2.35rem, 5.3vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -0.032em;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      font-family: var(--serif);
+      font-size: 1.48rem;
+      font-weight: 500;
+      line-height: 1.18;
+    }
+
+    .section-copy {
+      max-width: 680px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.72;
+    }
+
+    .manifesto {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: clamp(34px, 7vw, 88px);
+      align-items: center;
+    }
+
+    .manifesto-statement {
+      padding: clamp(28px, 4vw, 46px);
+      border-radius: 20px;
+      color: var(--cream);
+      background: var(--ink);
+    }
+
+    .manifesto-statement .eyebrow { color: #ef9e7e; }
+
+    .manifesto-statement h2 {
+      margin-bottom: 0;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      font-weight: 400;
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+    }
+
+    .manifesto-copy p {
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.75;
+    }
+
+    .manifesto-copy p:last-child { margin-bottom: 0; }
+
+    .three-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .mini-card {
+      min-height: 100%;
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 19px;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .mini-card .number {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      padding: 0.85rem 1.2rem;
-      border-radius: 999px;
-      border: 1px solid rgba(47, 41, 36, 0.16);
-      color: #3b332d;
-      font-size: 0.92rem;
-      font-weight: 700;
-      text-decoration: none;
-      background: rgba(255, 250, 242, 0.72);
-      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+      width: 34px;
+      height: 34px;
+      margin-bottom: 26px;
+      border: 1px solid rgba(173, 87, 57, 0.22);
+      border-radius: 50%;
+      color: var(--papaya-dark);
+      background: rgba(223, 129, 91, 0.11);
+      font-size: 0.72rem;
+      font-weight: 600;
     }
 
-    .btn-secondary:hover {
-      background: #fffdf8;
-      border-color: rgba(189, 102, 71, 0.32);
-      transform: translateY(-1px);
+    .mini-card p,
+    .mini-card li {
+      color: var(--muted);
+      font-size: 0.91rem;
+      line-height: 1.65;
     }
 
-    .blueprint-box {
-      position: relative;
-      overflow: hidden;
+    .mini-card p:last-child { margin-bottom: 0; }
+
+    .work-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 28px;
+      margin-top: 8px;
+      border-top: 1px solid var(--border);
     }
 
-    .blueprint-box::before,
-    .blueprint-box::after {
-      content: "";
-      position: absolute;
+    .work-item {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      gap: 14px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .work-item span {
+      color: var(--papaya-dark);
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      font-style: italic;
+    }
+
+    .work-item p {
+      margin: 0;
+      color: #5e554d;
+      line-height: 1.55;
+    }
+
+    .practice {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: clamp(34px, 7vw, 82px);
+    }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: rgba(255, 255, 255, 0.57);
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       width: 42px;
       height: 42px;
-      pointer-events: none;
-      opacity: 0.48;
+      border-radius: 50%;
+      color: var(--cream);
+      background: var(--moss);
+      font-size: 0.74rem;
+      font-weight: 600;
     }
 
-    .blueprint-box::before {
-      top: 18px;
-      left: 18px;
-      border-top: 1px solid var(--blueprint);
-      border-left: 1px solid var(--blueprint);
+    .step h3 {
+      margin: 1px 0 5px;
+      font-size: 1.2rem;
     }
 
-    .blueprint-box::after {
-      right: 18px;
-      bottom: 18px;
-      border-right: 1px solid var(--blueprint);
-      border-bottom: 1px solid var(--blueprint);
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.89rem;
+      line-height: 1.55;
     }
 
-    .rule {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(189, 102, 71, 0.22), transparent);
+    .offers {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
     }
+
+    .offer {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      padding: clamp(27px, 4vw, 38px);
+      border: 1px solid var(--border);
+      border-radius: 21px;
+      background: rgba(255, 255, 255, 0.61);
+    }
+
+    .offer.featured {
+      color: var(--cream);
+      background: var(--ink);
+      box-shadow: 0 22px 54px rgba(43, 35, 29, 0.17);
+    }
+
+    .offer .eyebrow { margin-bottom: 27px; }
+    .offer.featured .eyebrow { color: #ee9c7b; }
+
+    .offer h3 {
+      font-size: clamp(1.8rem, 3.4vw, 2.7rem);
+    }
+
+    .offer > p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .offer.featured > p,
+    .offer.featured li { color: #d9d0c8; }
+
+    .offer ul {
+      margin: 22px 0 28px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .offer li {
+      position: relative;
+      margin: 11px 0;
+      padding-left: 21px;
+      color: var(--muted);
+      font-size: 0.91rem;
+      line-height: 1.55;
+    }
+
+    .offer li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--papaya);
+    }
+
+    .offer .text-link {
+      width: fit-content;
+      margin-top: auto;
+      padding-bottom: 3px;
+      border-bottom: 1px solid currentColor;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: clamp(34px, 7vw, 88px);
+      align-items: start;
+    }
+
+    .aside-quote {
+      padding: clamp(28px, 4vw, 42px);
+      border: 1px solid rgba(223, 129, 91, 0.2);
+      border-radius: 20px;
+      background: rgba(223, 129, 91, 0.1);
+    }
+
+    .aside-quote p:first-child {
+      margin-bottom: 20px;
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 4vw, 3rem);
+      font-style: italic;
+      line-height: 1.1;
+    }
+
+    .aside-quote p:last-child {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .fit-card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.57);
+    }
+
+    .fit-card h3 { font-size: 1.3rem; }
+
+    .fit-card ul {
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .fit-card li {
+      position: relative;
+      margin: 12px 0;
+      padding-left: 21px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .fit-card li::before {
+      content: "•";
+      position: absolute;
+      left: 3px;
+      color: var(--papaya-dark);
+    }
+
+    .contact {
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .contact h2 {
+      max-width: 800px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .contact .section-copy {
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 11px;
+      margin-top: 29px;
+    }
+
+    .fine-print {
+      max-width: 780px;
+      margin: 28px auto 0;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+      color: #81776e;
+      font-size: 0.77rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 27px 4px 36px;
+      color: #746b63;
+      font-size: 0.78rem;
+    }
+
+    footer p { margin: 0; }
 
     .reveal {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 700ms ease, transform 700ms ease;
+      transform: translateY(16px);
+      transition: opacity 650ms ease, transform 650ms ease;
     }
 
     .reveal.in-view {
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
     }
 
-    .icon {
-      width: 1.2rem;
-      height: 1.2rem;
-      flex: 0 0 auto;
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .hero-grid,
+      .manifesto,
+      .practice,
+      .about { grid-template-columns: 1fr; }
+      .hero-grid { align-items: start; }
+      .with-note { min-height: 0; }
+      .three-grid { grid-template-columns: 1fr; }
+      .work-list { grid-template-columns: 1fr; }
+      .offers { grid-template-columns: 1fr; }
     }
 
-    .plan-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 2.1rem;
-      height: 2.1rem;
-      border-radius: 50%;
-      background: rgba(232, 141, 99, 0.13);
-      color: var(--papaya-dark);
-      font-weight: 700;
-      font-size: 0.86rem;
-      border: 1px solid rgba(232, 141, 99, 0.20);
-    }
-
-    .hero-title {
-      font-size: clamp(1.06rem, 5.25vw, 1.32rem) !important;
-      max-width: 100%;
-    }
-
-    .hero-title span {
-      display: block;
-      max-width: 100%;
-      white-space: nowrap;
-    }
-
-    .hero-copy,
-    .quote-copy {
-      overflow-wrap: anywhere;
-    }
-
-    @media (max-width: 374px) {
-      .hero-title {
-        font-size: clamp(1rem, 4.9vw, 1.16rem) !important;
+    @media (max-width: 600px) {
+      .shell { width: min(100% - 20px, 1120px); }
+      .site-nav {
+        top: 8px;
+        width: calc(100% - 20px);
+        margin-top: 8px;
+        padding-left: 14px;
       }
-    }
-
-    @media (min-width: 640px) {
-      .hero-title {
-        font-size: 3.75rem !important;
+      .brand { gap: 6px; }
+      .brand-with { font-size: 0.95rem; }
+      .brand-name { font-size: 0.95rem; }
+      .nav-cta {
+        min-height: 36px;
+        padding: 0 13px;
+        font-size: 0.76rem;
       }
-    }
-
-    @media (min-width: 1024px) {
-      .hero-title {
-        font-size: 4.5rem !important;
+      .hero { padding: 48px 20px 26px; }
+      h1 {
+        font-size: clamp(3.25rem, 18vw, 5rem);
+        overflow-wrap: anywhere;
+      }
+      .hero-actions,
+      .contact-actions { flex-direction: column; }
+      .button-primary,
+      .button-secondary { width: 100%; }
+      .section { padding: 39px 20px; }
+      .fit-grid { grid-template-columns: 1fr; }
+      footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-right: 5px;
+        padding-left: 5px;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .reveal {
-        opacity: 1;
-        transform: none;
-        transition: none;
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .button-primary, .button-secondary, .nav-cta { transition: none; }
+    }
+
+    @media print {
+      body { background-attachment: scroll; }
+      .site-nav { position: relative; top: auto; }
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .card, .offer, .fit-card, .step { break-inside: avoid; }
+    }
+
+    /* v02 — field notebook / route-map language */
+    body {
+      background-attachment: scroll;
+      background-color: #efe8dd;
+      background-image:
+        radial-gradient(circle at 12% 5%, rgba(223, 129, 91, 0.11), transparent 27rem),
+        linear-gradient(rgba(117, 147, 163, 0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(117, 147, 163, 0.10) 1px, transparent 1px),
+        repeating-linear-gradient(0deg, rgba(73, 56, 43, 0.018) 0 1px, transparent 1px 8px);
+      background-size: auto, 46px 46px, 46px 46px, auto;
+      background-position: center, -1px -1px, -1px -1px, center;
+    }
+
+    .site-nav {
+      width: min(1160px, calc(100% - 28px));
+      margin-bottom: 0;
+      padding: 15px 6px;
+      border: 0;
+      border-bottom: 1px solid rgba(69, 54, 42, 0.14);
+      border-radius: 0;
+      background: rgba(247, 241, 232, 0.88);
+      box-shadow: none;
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-cta {
+      min-height: 44px;
+      padding: 5px 0 4px;
+      border-bottom: 1px solid rgba(44, 39, 35, 0.65);
+      border-radius: 0;
+      color: var(--ink);
+      background: transparent;
+    }
+
+    .nav-cta:hover {
+      color: var(--papaya-dark);
+      background: transparent;
+      transform: none;
+    }
+
+    .nav-links a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding-left: 0;
+      transition: padding 180ms ease, color 180ms ease;
+    }
+
+    .nav-links a::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 9px;
+      height: 9px;
+      border: 1px solid var(--papaya-dark);
+      border-right-color: transparent;
+      border-radius: 50%;
+      opacity: 0;
+      transform: translateY(-50%) rotate(-24deg);
+      transition: opacity 180ms ease;
+    }
+
+    .nav-links a:hover { padding-left: 15px; }
+    .nav-links a:hover::before { opacity: 0.72; }
+
+    .field-book {
+      position: relative;
+      width: min(1160px, calc(100% - 28px));
+      margin: 0 auto 28px;
+      overflow: hidden;
+      border-right: 1px solid rgba(69, 54, 42, 0.11);
+      border-left: 1px solid rgba(69, 54, 42, 0.11);
+      background:
+        linear-gradient(90deg, transparent 74px, rgba(223, 129, 91, 0.14) 74px 75px, transparent 75px),
+        rgba(255, 251, 245, 0.93);
+      box-shadow: 0 25px 80px rgba(65, 46, 31, 0.09);
+    }
+
+    .field-book > *:not(.route-layer) {
+      position: relative;
+      z-index: 2;
+    }
+
+    .route-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .route-path {
+      fill: none;
+      stroke: rgba(117, 147, 163, 0.5);
+      stroke-width: 1.25;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vector-effect: non-scaling-stroke;
+      marker-end: url(#route-arrow);
+    }
+
+    .route-path.warm { stroke: rgba(173, 87, 57, 0.43); }
+
+    .route-dot {
+      fill: var(--cream-solid);
+      stroke: rgba(117, 147, 163, 0.56);
+      stroke-width: 1;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .folio {
+      position: relative;
+      scroll-margin-top: 96px;
+      min-height: 70vh;
+      padding: clamp(92px, 13vw, 178px) clamp(30px, 9vw, 118px);
+      border-bottom: 1px solid rgba(69, 54, 42, 0.1);
+    }
+
+    .folio-number {
+      position: absolute;
+      top: 32px;
+      left: 26px;
+      color: rgba(69, 54, 42, 0.48);
+      font-family: var(--serif);
+      font-size: 0.72rem;
+      font-style: italic;
+    }
+
+    .folio-number::after {
+      content: "";
+      display: inline-block;
+      width: 35px;
+      height: 1px;
+      margin: 0 0 3px 9px;
+      background: rgba(117, 147, 163, 0.45);
+    }
+
+    .coordinate {
+      color: rgba(72, 89, 97, 0.68);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .c-mark {
+      display: inline-block;
+      width: 13px;
+      height: 13px;
+      border: 1px solid rgba(173, 87, 57, 0.62);
+      border-right-color: transparent;
+      border-radius: 50%;
+      transform: rotate(-24deg);
+    }
+
+    .c-mark.small {
+      width: 8px;
+      height: 8px;
+      border-color: rgba(117, 147, 163, 0.58);
+      border-right-color: transparent;
+    }
+
+    .hero-journal {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
+      gap: clamp(50px, 10vw, 130px);
+      align-items: center;
+      min-height: calc(100vh - 75px);
+      padding-top: clamp(80px, 10vw, 130px);
+      padding-bottom: clamp(80px, 10vw, 130px);
+    }
+
+    .hero-journal h1 {
+      max-width: 760px;
+      margin: 22px 0 18px;
+      font-size: clamp(4.8rem, 10.8vw, 9.5rem);
+      line-height: 0.84;
+    }
+
+    .hero-thesis {
+      max-width: 650px;
+      margin: 0 0 34px;
+      color: #514a44;
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 3.8vw, 3.35rem);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+    }
+
+    .route-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 18px 0 0;
+      color: rgba(91, 105, 111, 0.74);
+      font-family: var(--serif);
+      font-size: 0.78rem;
+      font-style: italic;
+      line-height: 1.35;
+    }
+
+    .route-note::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      background: rgba(117, 147, 163, 0.48);
+    }
+
+    .folio-route-mark {
+      position: absolute;
+      top: 31px;
+      right: 30px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(72, 89, 97, 0.49);
+      font-size: 0.56rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .folio-route-mark::after {
+      content: "→";
+      color: rgba(173, 87, 57, 0.55);
+      font-size: 0.75rem;
+      letter-spacing: 0;
+    }
+
+    .blueprint-circle {
+      position: relative;
+      display: inline-block;
+      isolation: isolate;
+    }
+
+    .blueprint-circle::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: -0.25em -0.42em -0.2em;
+      border: 1px solid rgba(117, 147, 163, 0.36);
+      border-right-color: transparent;
+      border-radius: 50%;
+      transform: rotate(-3deg);
+      pointer-events: none;
+    }
+
+    .hero-journal .hero-lead {
+      max-width: 610px;
+      font-size: clamp(1.02rem, 1.7vw, 1.18rem);
+      line-height: 1.75;
+    }
+
+    .margin-note {
+      align-self: end;
+      max-width: 250px;
+      padding: 22px 0 0 24px;
+      border-top: 1px solid rgba(117, 147, 163, 0.35);
+      border-left: 1px solid rgba(117, 147, 163, 0.35);
+    }
+
+    .margin-note blockquote {
+      margin: 30px 0 22px;
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2.6vw, 2rem);
+      font-style: italic;
+      line-height: 1.3;
+    }
+
+    .margin-note p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.65;
+    }
+
+    .journal-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      margin-top: 32px;
+      min-height: 44px;
+      padding: 0 0 7px;
+      border-bottom: 1px solid rgba(44, 39, 35, 0.65);
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .field-book .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    .js .field-book .reveal {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 800ms ease, transform 800ms ease;
+    }
+
+    .js .field-book .reveal.in-view { opacity: 1; transform: none; }
+
+    .brand { min-height: 44px; }
+
+    .journal-link:hover { color: var(--papaya-dark); }
+
+    .section-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+      gap: clamp(35px, 8vw, 100px);
+      align-items: start;
+      margin-bottom: clamp(52px, 9vw, 105px);
+    }
+
+    .section-intro h2,
+    .story-copy h2,
+    .route-copy h2,
+    .offers-copy h2 {
+      margin: 0;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      line-height: 0.98;
+    }
+
+    .section-intro p,
+    .story-copy p,
+    .route-copy p,
+    .offers-copy p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .field-notes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 clamp(36px, 8vw, 100px);
+      border-top: 1px solid rgba(69, 54, 42, 0.18);
+    }
+
+    .field-note {
+      position: relative;
+      min-height: 220px;
+      padding: 34px 10px 34px 38px;
+      border-bottom: 1px solid rgba(69, 54, 42, 0.18);
+    }
+
+    .field-note::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 12px;
+      height: 7px;
+      border-right: 1px solid rgba(117, 147, 163, 0.55);
+      border-left: 1px solid rgba(117, 147, 163, 0.55);
+    }
+
+    .field-note h3 {
+      max-width: 340px;
+      margin-bottom: 16px;
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+    }
+
+    .field-note p {
+      max-width: 390px;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .screen-thought {
+      display: flex;
+      align-items: center;
+      min-height: 88vh;
+    }
+
+    .screen-thought h2 {
+      max-width: 920px;
+      margin: 0;
+      font-size: clamp(4rem, 11vw, 9.7rem);
+      line-height: 0.9;
+    }
+
+    .screen-thought h2 em {
+      display: block;
+      color: var(--papaya-dark);
+      font-weight: 400;
+    }
+
+    .screen-annotation {
+      position: absolute;
+      right: clamp(30px, 8vw, 110px);
+      bottom: 55px;
+      max-width: 250px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.65;
+    }
+
+    .story-grid,
+    .route-grid,
+    .offers-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(48px, 10vw, 130px);
+      align-items: start;
+    }
+
+    .story-aside {
+      min-height: 510px;
+      padding: 36px;
+      border: 1px solid rgba(69, 54, 42, 0.12);
+      background:
+        linear-gradient(rgba(117, 147, 163, 0.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(117, 147, 163, 0.09) 1px, transparent 1px),
+        rgba(245, 236, 223, 0.48);
+      background-size: 28px 28px;
+    }
+
+    .story-aside p:last-child {
+      margin-top: 210px;
+      font-family: var(--serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.7rem);
+      font-style: italic;
+      line-height: 1.18;
+    }
+
+    .story-copy p { max-width: 540px; }
+
+    .route-steps {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid rgba(69, 54, 42, 0.2);
+    }
+
+    .route-step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 22px;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(69, 54, 42, 0.2);
+    }
+
+    .route-step::after {
+      content: attr(data-route-note);
+      position: absolute;
+      top: 12px;
+      right: 0;
+      color: rgba(72, 89, 97, 0.48);
+      font-family: var(--serif);
+      font-size: 0.66rem;
+      font-style: italic;
+    }
+
+    .route-step .c-mark { margin-top: 5px; }
+
+    .route-step h3 { margin-bottom: 7px; }
+
+    .route-step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+
+    .offer-ledger {
+      border-top: 1px solid rgba(69, 54, 42, 0.2);
+    }
+
+    .ledger-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 30px;
+      padding: 32px 0;
+      border-bottom: 1px solid rgba(69, 54, 42, 0.2);
+    }
+
+    .ledger-row .coordinate { padding-top: 6px; }
+
+    .ledger-row h3 { font-size: clamp(1.6rem, 3vw, 2.3rem); }
+
+    .ledger-row p {
+      max-width: 500px;
+      margin-bottom: 0;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .ordinary-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 70px;
+      margin-top: 70px;
+      border-top: 1px solid rgba(69, 54, 42, 0.2);
+    }
+
+    .ordinary-item {
+      padding: 26px 0;
+      border-bottom: 1px solid rgba(69, 54, 42, 0.2);
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 2.7vw, 1.9rem);
+      line-height: 1.3;
+    }
+
+    .quote-loop {
+      position: relative;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: clamp(42px, 7vw, 90px);
+      text-align: center;
+    }
+
+    .quote-loop::before {
+      content: "";
+      position: absolute;
+      inset: 0 4%;
+      border: 1px solid rgba(173, 87, 57, 0.26);
+      border-right-color: transparent;
+      border-radius: 50%;
+      transform: rotate(-3deg);
+      pointer-events: none;
+    }
+
+    .quote-loop blockquote {
+      position: relative;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 4.4rem);
+      font-style: italic;
+      line-height: 1.15;
+    }
+
+    .quote-loop cite {
+      display: block;
+      margin-top: 30px;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-style: normal;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .final-note {
+      display: grid;
+      place-items: center;
+      min-height: 90vh;
+      text-align: center;
+    }
+
+    .final-note h2 {
+      max-width: 850px;
+      margin: 0 auto 30px;
+      font-size: clamp(3.4rem, 8vw, 7rem);
+      line-height: 0.95;
+    }
+
+    .final-note .section-copy { margin: 0 auto; }
+
+    .final-note .journal-link { margin-top: 42px; }
+
+    .field-footer {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 24px;
+      min-height: 190px;
+      padding: 40px clamp(30px, 8vw, 100px);
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    .field-footer p:nth-child(2) { text-align: center; }
+    .field-footer p:last-child { text-align: right; }
+
+    @media (max-width: 860px) {
+      .route-layer { display: none; }
+
+      .field-book section:nth-of-type(2)::after,
+      .field-book section:nth-of-type(5)::after,
+      .field-book section:nth-of-type(8)::after {
+        content: "";
+        position: absolute;
+        top: 36px;
+        right: 15px;
+        width: 32px;
+        height: 92px;
+        border-right: 1px solid rgba(117, 147, 163, 0.38);
+        border-bottom: 1px solid rgba(117, 147, 163, 0.38);
+        border-radius: 0 0 24px 0;
+        pointer-events: none;
       }
-      .btn-primary,
-      .btn-secondary {
-        transition: none;
+
+      .field-book {
+        background:
+          linear-gradient(90deg, transparent 28px, rgba(223, 129, 91, 0.12) 28px 29px, transparent 29px),
+          rgba(255, 251, 245, 0.94);
       }
+
+      .hero-journal,
+      .section-intro,
+      .story-grid,
+      .route-grid,
+      .offers-grid { grid-template-columns: 1fr; }
+
+      .hero-journal { min-height: auto; }
+      .margin-note { max-width: 460px; }
+      .field-notes,
+      .ordinary-list { grid-template-columns: 1fr; }
+      .screen-thought { min-height: 75vh; }
+      .screen-annotation { position: static; margin-top: 45px; }
+      .story-aside { min-height: 400px; }
+      .story-aside p:last-child { margin-top: 145px; }
+    }
+
+    @media (max-width: 600px) {
+      .site-nav,
+      .field-book { width: calc(100% - 16px); }
+
+      .site-nav { padding-right: 2px; padding-left: 2px; }
+      .site-nav { backdrop-filter: none; }
+      .nav-cta { max-width: 126px; text-align: right; }
+      .folio { padding: 90px 26px 100px 42px; }
+      .folio-number { left: 12px; }
+      .hero-journal h1 { font-size: clamp(4rem, 21vw, 5.4rem); }
+      .hero-journal { gap: 70px; }
+      .screen-thought h2 { font-size: clamp(3.55rem, 18vw, 5.6rem); }
+      .section-intro h2,
+      .story-copy h2,
+      .route-copy h2,
+      .offers-copy h2 { font-size: clamp(2.7rem, 14vw, 4.1rem); }
+      .field-note { padding-left: 28px; }
+      .ledger-row { grid-template-columns: 1fr; gap: 8px; }
+      .quote-loop { padding-right: 24px; padding-left: 24px; }
+      .folio-route-mark { right: 22px; }
+      .route-step { padding-top: 36px; }
+      .field-footer { grid-template-columns: 1fr; gap: 12px; }
+      .field-footer p:nth-child(2),
+      .field-footer p:last-child { text-align: left; }
+    }
+
+    @media print {
+      .route-path { stroke-dashoffset: 0 !important; }
+      .folio { min-height: auto; }
+      .screen-thought,
+      .final-note { min-height: 700px; }
     }
   </style>
 </head>
-<body class="font-sans antialiased">
-  <main class="page-shell mx-auto max-w-6xl px-5 py-6 sm:px-6 lg:px-8 lg:py-10">
-    <nav class="mx-auto mb-5 flex max-w-5xl items-center justify-between text-sm text-stone-600">
-      <a href="#top" class="font-display text-xl italic text-stone-800">Social &amp; Dating Strategy with Danaya</a>
-      <a href="#contact" class="hidden rounded-full border border-stone-300/70 bg-cream/70 px-4 py-2 font-semibold text-stone-700 sm:inline-flex">Start with a call</a>
-    </nav>
+<body>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="WITH DANAYA, back to top">
+      <span class="brand-with">WITH</span>
+      <span class="brand-name">DANAYA</span>
+    </a>
+    <div class="nav-links">
+      <a href="#top">Home</a>
+      <a href="#route">The Practice</a>
+      <a href="#dating">Dating</a>
+      <a href="#story">About</a>
+    </div>
+    <a class="nav-cta" href="#contact">Start Untangle</a>
+  </nav>
 
-    <section id="top" class="card blueprint-box reveal mx-auto max-w-5xl px-6 py-11 sm:px-10 lg:px-14 lg:py-16">
-      <div class="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-end">
+  <main id="top" class="field-book">
+    <svg class="route-layer" viewBox="0 0 1000 9000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <defs>
+        <marker id="route-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M1 1 L7 4 L1 7" fill="none" stroke="#7593a3" stroke-width="1" opacity="0.65" />
+        </marker>
+      </defs>
+      <path class="route-path" data-route data-start="0.00" data-end="0.18" d="M835 120 C900 380 760 690 830 1040 C875 1260 930 1420 840 1640" />
+      <circle class="route-dot" cx="835" cy="120" r="5" />
+      <path class="route-path warm" data-route data-start="0.13" data-end="0.34" d="M840 1640 C770 1840 690 1940 755 2160 C845 2460 910 2570 795 2860 C745 2990 710 3130 780 3300" />
+      <path class="route-path" data-route data-start="0.29" data-end="0.52" d="M780 3300 C900 3490 895 3740 770 3910 C690 4020 735 4220 830 4390 C925 4560 890 4780 790 4950" />
+      <circle class="route-dot" cx="830" cy="4390" r="5" />
+      <path class="route-path warm" data-route data-start="0.47" data-end="0.72" d="M790 4950 C690 5160 720 5380 840 5560 C930 5690 900 5910 805 6100 C720 6270 760 6490 850 6660" />
+      <path class="route-path" data-route data-start="0.67" data-end="0.90" d="M850 6660 C930 6870 845 7090 755 7230 C680 7350 730 7570 820 7720 C915 7880 880 8130 760 8310" />
+      <path class="route-path warm" data-route data-start="0.84" data-end="1.00" d="M760 8310 C700 8420 745 8580 820 8650 C870 8700 850 8810 800 8940" />
+      <circle class="route-dot" cx="800" cy="8940" r="5" />
+    </svg>
+
+    <section class="folio hero-journal reveal" aria-labelledby="hero-title">
+      <span class="folio-number">01</span>
+      <span class="folio-route-mark" aria-hidden="true">Route A · Start</span>
+      <div>
+        <p class="coordinate">Social courage · participation / belonging</p>
+        <h1 id="hero-title">People need people.</h1>
+        <p class="hero-thesis">Modern life forgot to teach us how.</p>
+        <p class="hero-lead">You can be thoughtful, kind and very good at your job — and still hesitate when it is time to text first, ask someone out, set a boundary or let people truly know you. We work on the real-life part.</p>
+        <a class="journal-link" href="#field-notes"><span class="c-mark small" aria-hidden="true"></span> Open the notebook <span aria-hidden="true">↓</span></a>
+      </div>
+      <aside class="margin-note" aria-label="The meaning of with">
+        <p class="coordinate">The small word matters</p>
+        <blockquote>Not above you. Not ahead of you. With you.</blockquote>
+        <p>Clear perspective, honest feedback and practical support while real life is happening.</p>
+      </aside>
+    </section>
+
+    <section id="field-notes" class="folio reveal" aria-labelledby="field-notes-title">
+      <span class="folio-number">02</span>
+      <span class="folio-route-mark" aria-hidden="true">Try here</span>
+      <div class="section-intro">
         <div>
-          <p class="eyebrow mb-5">For men who are doing well,<br />but doing it alone</p>
-          <h1 class="hero-title font-display font-medium leading-[1.02] tracking-normal text-stone-900 sm:text-6xl lg:text-7xl">
-            <span class="whitespace-nowrap">You built the career.</span><br />
-            <span class="whitespace-nowrap">Now build the life around it.</span>
-          </h1>
-          <p class="hero-copy mt-7 max-w-2xl text-lg leading-8 text-stone-600 sm:text-xl">
-            Coaching that turns career competence into real confidence — for dating, friendship, and the logistics of adult connection. Practical plans. No fluff. No performative allyship. Just what works.
-          </p>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a class="btn-primary" href="#contact">
-              Book a first conversation
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14" />
-                <path d="m13 6 6 6-6 6" />
-              </svg>
-            </a>
-            <a class="btn-secondary" href="#blueprint">See the blueprint</a>
-          </div>
+          <span class="c-mark" aria-hidden="true"></span>
+          <p class="coordinate" style="margin-top: 16px;">Observed in real life</p>
         </div>
-
-        <div class="mini-card p-5 sm:p-6">
-          <div class="mb-5 flex items-center justify-between gap-4">
-            <p class="eyebrow">First principles</p>
-            <svg class="h-9 w-9 text-blueink/70" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M10 38V10h28v28H10Z" />
-              <path d="M16 16h16M16 23h16M16 30h10" />
-              <path d="M10 18H6M10 30H6M38 18h4M38 30h4" />
-            </svg>
-          </div>
-          <blockquote class="font-display text-2xl leading-snug text-stone-800">
-            "The problem is not that you are broken. It is that nobody ever handed you a sane operating plan for adult connection."
-          </blockquote>
-          <div class="rule my-6"></div>
-          <div class="grid grid-cols-2 gap-3 text-sm text-stone-600">
-            <div>
-              <p class="font-semibold text-stone-900">Dating</p>
-              <p class="mt-1">Profile, apps, pacing, follow-through.</p>
-            </div>
-            <div>
-              <p class="font-semibold text-stone-900">Friends</p>
-              <p class="mt-1">Routines, invites, groups, consistency.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mx-auto mt-6 grid max-w-5xl gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-      <div class="card reveal px-6 py-8 sm:px-8">
-        <p class="eyebrow mb-4">The problem</p>
-        <h2 class="font-display text-3xl font-medium leading-tight text-stone-900 sm:text-4xl">You built the career. Now what?</h2>
-        <p class="mt-5 leading-7 text-stone-600">
-          You can run a team, close a deal, manage a crisis, and still feel weirdly unprepared when the calendar is empty on a Friday night.
-        </p>
-        <p class="mt-4 leading-7 text-stone-600">
-          That is not a character flaw. It is a systems problem: fewer organic introductions, weaker community loops, rusty dating instincts, and no clear next action.
-        </p>
-      </div>
-
-      <div class="card reveal px-6 py-8 sm:px-8">
-        <p class="eyebrow mb-4">The real cost</p>
-        <div class="space-y-4">
-          <p class="leading-7 text-stone-600">
-            What if that person is out there <em>right now</em>, going through the same frustrating mess of modern dating you are? Dealing with the same ghosting, the same mixed signals, the same promising connections that dissolve into nothing.
-          </p>
-          <p class="leading-7 text-stone-600">
-            What if they are wondering when they are going to meet <em>you</em> — the same way you are wondering when you are going to meet them?
-          </p>
-          <div class="mt-5 rounded-2xl border border-papaya/20 bg-papaya/10 p-5">
-            <p class="font-display text-xl italic leading-snug text-stone-800">
-              The real tragedy is not the bad dates or the people who let you down. It is letting those experiences cost you the love that is still ahead of you.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="mx-auto mt-6 grid max-w-5xl gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-      <div class="card reveal px-6 py-8 sm:px-8">
-        <p class="eyebrow mb-4">What changes</p>
-        <div class="grid gap-4 sm:grid-cols-3">
-          <div class="mini-card p-5">
-            <svg class="mb-4 h-7 w-7 text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 19.5V5.8A2.8 2.8 0 0 1 6.8 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5" />
-              <path d="M8 7h8M8 11h7" />
-            </svg>
-            <h3 class="font-semibold text-stone-900">Clarity</h3>
-            <p class="mt-2 text-sm leading-6 text-stone-600">Know what to fix first and what to stop overthinking.</p>
-          </div>
-          <div class="mini-card p-5">
-            <svg class="mb-4 h-7 w-7 text-moss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M3 12h18" />
-              <path d="M12 3v18" />
-              <path d="m16 8 5-5" />
-              <path d="m8 16-5 5" />
-            </svg>
-            <h3 class="font-semibold text-stone-900">Practice</h3>
-            <p class="mt-2 text-sm leading-6 text-stone-600">Better reps, better scripts, better places to meet real people.</p>
-          </div>
-          <div class="mini-card p-5">
-            <svg class="mb-4 h-7 w-7 text-blueink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M20 6 9 17l-5-5" />
-            </svg>
-            <h3 class="font-semibold text-stone-900">Follow-through</h3>
-            <p class="mt-2 text-sm leading-6 text-stone-600">A realistic weekly cadence that does not depend on motivation.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="blueprint" class="card blueprint-box reveal mx-auto mt-6 max-w-5xl px-6 py-9 sm:px-10 lg:px-12">
-      <div class="max-w-2xl">
-        <p class="eyebrow mb-4">The approach</p>
-        <h2 class="font-display text-4xl font-medium leading-tight text-stone-900 sm:text-5xl">A social life is built like anything else: with a map, reps, and review.</h2>
-      </div>
-
-      <div class="mt-9 grid gap-5 lg:grid-cols-4">
-        <article class="mini-card p-5">
-          <span class="plan-number">01</span>
-          <h3 class="mt-5 font-semibold text-stone-900">Audit the current pattern</h3>
-          <p class="mt-3 text-sm leading-6 text-stone-600">Where your week leaks connection, what your dating setup says, and which assumptions are costing you.</p>
-        </article>
-        <article class="mini-card p-5">
-          <span class="plan-number">02</span>
-          <h3 class="mt-5 font-semibold text-stone-900">Build the actual plan</h3>
-          <p class="mt-3 text-sm leading-6 text-stone-600">Apps, venues, introductions, social routines, messaging, and follow-up all get assigned a job.</p>
-        </article>
-        <article class="mini-card p-5">
-          <span class="plan-number">03</span>
-          <h3 class="mt-5 font-semibold text-stone-900">Run clean experiments</h3>
-          <p class="mt-3 text-sm leading-6 text-stone-600">You try specific actions, then we look at reality instead of spinning stories about what it means.</p>
-        </article>
-        <article class="mini-card p-5">
-          <span class="plan-number">04</span>
-          <h3 class="mt-5 font-semibold text-stone-900">Make it sustainable</h3>
-          <p class="mt-3 text-sm leading-6 text-stone-600">The goal is not a burst of effort. It is a life where connection has a normal place on the calendar.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="mx-auto mt-6 grid max-w-5xl gap-6 lg:grid-cols-2">
-      <div class="card reveal px-6 py-8 sm:px-8">
-        <p class="eyebrow mb-4">What you get</p>
-        <h2 class="font-display text-3xl font-medium text-stone-900 sm:text-4xl">Plain deliverables. No mysticism.</h2>
-        <div class="mt-7 space-y-4">
-          <div class="flex gap-4">
-            <svg class="mt-1 h-5 w-5 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 11 12 14 22 4" />
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-            </svg>
-            <p class="leading-7 text-stone-600"><strong class="text-stone-900">Dating app and profile cleanup</strong>, including photos, prompts, messages, and first-date logistics.</p>
-          </div>
-          <div class="flex gap-4">
-            <svg class="mt-1 h-5 w-5 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 11 12 14 22 4" />
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-            </svg>
-            <p class="leading-7 text-stone-600"><strong class="text-stone-900">A friendship pipeline</strong> that turns vague intentions into repeatable invites, groups, and follow-ups.</p>
-          </div>
-          <div class="flex gap-4">
-            <svg class="mt-1 h-5 w-5 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 11 12 14 22 4" />
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-            </svg>
-            <p class="leading-7 text-stone-600"><strong class="text-stone-900">Weekly accountability</strong> with concrete next steps, debriefs, and course correction.</p>
-          </div>
-          <div class="flex gap-4">
-            <svg class="mt-1 h-5 w-5 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M9 11 12 14 22 4" />
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
-            </svg>
-            <p class="leading-7 text-stone-600"><strong class="text-stone-900">Scripts that still sound like you</strong> for invitations, follow-ups, boundaries, and honest conversations.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="card reveal px-6 py-8 sm:px-8">
-        <p class="eyebrow mb-4">Why me</p>
-        <h2 class="font-display text-3xl font-medium text-stone-900 sm:text-4xl">From career confidence to life confidence.</h2>
-        <p class="mt-5 leading-7 text-stone-600">
-          I am passionate about helping men apply the competence they already built in their careers to the parts of life that matter just as much — dating, friendship, and showing up as yourself.
-        </p>
-        <p class="mt-4 leading-7 text-stone-600">
-          Maybe you reinvented yourself. Maybe the friendships from your past life did not graduate with you into the new one. That is not failure. That is a transition — and transitions need a plan.
-        </p>
-        <div class="mt-7 rounded-2xl border border-papaya/20 bg-papaya/10 p-5">
-          <p class="quote-copy font-display text-2xl italic leading-snug text-stone-800">You are not broken. You are just operating without a map.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card reveal mx-auto mt-6 max-w-5xl px-6 py-9 sm:px-10 lg:px-12">
-      <div class="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
         <div>
-          <p class="eyebrow mb-4">Fit</p>
-          <h2 class="font-display text-4xl font-medium leading-tight text-stone-900">Who this is for.</h2>
-          <p class="mt-5 leading-7 text-stone-600">
-            Men from 30 to 130 who have enough competence to know that willpower is not a plan.
-          </p>
+          <h2 id="field-notes-title">The map begins with what is actually happening.</h2>
+          <p>Not a personality test. Not a grand reinvention. The message you cannot send. The friendship you keep meaning to revive. The boundary that becomes a five-paragraph apology.</p>
         </div>
-        <div class="grid gap-4 sm:grid-cols-2">
-          <div class="mini-card p-5">
-            <h3 class="font-semibold text-stone-900">Good fit</h3>
-            <ul class="mt-4 space-y-3 text-sm leading-6 text-stone-600">
-              <li class="flex gap-3">
-                <svg class="mt-1 h-4 w-4 flex-none text-moss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
-                <span>You want direct feedback without humiliation.</span>
-              </li>
-              <li class="flex gap-3">
-                <svg class="mt-1 h-4 w-4 flex-none text-moss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
-                <span>You are willing to try specific actions.</span>
-              </li>
-              <li class="flex gap-3">
-                <svg class="mt-1 h-4 w-4 flex-none text-moss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
-                <span>You care about dating and friendship, not conquest.</span>
-              </li>
-            </ul>
-          </div>
-          <div class="mini-card p-5">
-            <h3 class="font-semibold text-stone-900">Not the fit</h3>
-            <ul class="mt-4 space-y-3 text-sm leading-6 text-stone-600">
-              <li class="flex gap-3">
-                <svg class="mt-1 h-4 w-4 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 6-12 12" /></svg>
-                <span>You want tricks, pressure tactics, or status games.</span>
-              </li>
-              <li class="flex gap-3">
-                <svg class="mt-1 h-4 w-4 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 6-12 12" /></svg>
-                <span>You want someone else to blame for every outcome.</span>
-              </li>
-              <li class="flex gap-3">
-                <svg class="mt-1 h-4 w-4 flex-none text-papaya" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 6-12 12" /></svg>
-                <span>You are not open to changing your calendar.</span>
-              </li>
-            </ul>
-          </div>
+      </div>
+
+      <div class="field-notes">
+        <article class="field-note">
+          <p class="coordinate">Friendship · 01</p>
+          <h3>Become socially available.</h3>
+          <p>Make the invitation. Put something on the calendar. Give familiarity enough repetition to become friendship.</p>
+        </article>
+        <article class="field-note">
+          <p class="coordinate">Communication · 02</p>
+          <h3>Say what you actually mean.</h3>
+          <p>Use words the other person can understand without making them decode tone, silence or a carefully staged withdrawal.</p>
+        </article>
+        <article class="field-note">
+          <p class="coordinate">Boundaries · 03</p>
+          <h3>Stop apologising for existing.</h3>
+          <p>Recognise what is yours to carry — and what belongs to somebody else’s feelings, choices and disappointment.</p>
+        </article>
+        <article class="field-note">
+          <p class="coordinate">Dating · 04</p>
+          <h3>Ask. Notice. Do not invent.</h3>
+          <p>Make the invitation, pay attention to the answer and let mixed signals become information rather than a private epic.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="folio screen-thought reveal" aria-labelledby="friends-title">
+      <span class="folio-number">03</span>
+      <span class="folio-route-mark" aria-hidden="true">Again</span>
+      <div>
+        <p class="coordinate">Small acts of social courage</p>
+        <h2 id="friends-title">Make friends <em>again.</em></h2>
+        <p class="screen-annotation">Not by waiting to feel naturally social. By becoming a little easier to find, invite and know.</p>
+        <p class="route-note" aria-hidden="true">Invite once. Notice. Repeat.</p>
+      </div>
+    </section>
+
+    <section id="story" class="folio reveal" aria-labelledby="story-title">
+      <span class="folio-number">04</span>
+      <span class="folio-route-mark" aria-hidden="true">Origin</span>
+      <div class="story-grid">
+        <aside class="story-aside">
+          <p class="coordinate">Origin point · Soviet Union</p>
+          <p>I did not begin at the centre of the room.</p>
+        </aside>
+        <div class="story-copy">
+          <span class="c-mark" aria-hidden="true"></span>
+          <p class="coordinate" style="margin-top: 16px;">Why Danaya</p>
+          <h2 id="story-title">From wallflower to participant.</h2>
+          <p>I grew up a wallflower in the Soviet Union. I did not inherit a blueprint for social ease. I learnt by watching closely, trying, getting things wrong, repairing and trying again.</p>
+          <p>That is why I do not believe confidence arrives first. Participation comes first. Whatever confidence appears later has evidence underneath it.</p>
+          <p>The work is rational and compassionate. Honest without cruelty. Kind without participation prizes. Serious — but never so solemn that we cannot laugh at the absurdity of being human.</p>
         </div>
       </div>
     </section>
 
-    <section class="card blueprint-box reveal mx-auto mt-6 max-w-5xl px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
-      <p class="eyebrow mb-5">What people say</p>
-      <blockquote class="font-display text-2xl leading-snug text-stone-800 sm:text-3xl">
-        "The practical and sensible way you see life is refreshing. You live in reality. Many people today do not."
-      </blockquote>
-      <div class="rule my-6"></div>
-      <div class="flex items-center gap-3">
-        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-papaya/15 text-papaya-dark font-semibold text-sm">JY</div>
+    <section id="route" class="folio reveal" aria-labelledby="route-title">
+      <span class="folio-number">05</span>
+      <span class="folio-route-mark" aria-hidden="true">Route A</span>
+      <div class="route-grid">
+        <div class="route-copy">
+          <p class="coordinate">Social courage grows through practice</p>
+          <h2 id="route-title">We work with reality, not a fantasy personality.</h2>
+          <p>You do not need a new persona. You need clearer choices, <span class="blueprint-circle">better practice</span> and someone intelligent in your corner while you make them.</p>
+        </div>
+        <div class="route-steps">
+          <article class="route-step" data-route-note="Start →">
+            <span class="c-mark small" aria-hidden="true"></span>
+            <div><h3>Name the actual problem.</h3><p>Separate facts, feelings, assumptions and the part that is genuinely yours to act on.</p></div>
+          </article>
+          <article class="route-step" data-route-note="Repeat ↻">
+            <span class="c-mark small" aria-hidden="true"></span>
+            <div><h3>Practise before it matters.</h3><p>Rehearse words, delivery, boundaries and invitations without becoming robotic.</p></div>
+          </article>
+          <article class="route-step" data-route-note="Try here →">
+            <span class="c-mark small" aria-hidden="true"></span>
+            <div><h3>Do the real-life thing.</h3><p>Send the message. Attend the dinner. Ask the question. Have the conversation.</p></div>
+          </article>
+          <article class="route-step" data-route-note="Again ↻">
+            <span class="c-mark small" aria-hidden="true"></span>
+            <div><h3>Debrief without spiralling.</h3><p>Look at what happened, adjust what needs adjusting and keep one imperfect moment in proportion.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="folio screen-thought reveal" aria-labelledby="meaning-title">
+      <span class="folio-number">06</span>
+      <span class="folio-route-mark" aria-hidden="true">Try here</span>
+      <div>
+        <p class="coordinate">Practice note · communication</p>
+        <h2 id="meaning-title">Say what you <em>actually mean.</em></h2>
+        <p class="screen-annotation">Clear is usually kinder than the elaborate performance we create to avoid being briefly uncomfortable.</p>
+      </div>
+    </section>
+
+    <section id="ways" class="folio reveal" aria-labelledby="ways-title">
+      <span class="folio-number">07</span>
+      <span class="folio-route-mark" aria-hidden="true">Choose a path</span>
+      <div class="offers-grid">
+        <div class="offers-copy">
+          <span class="c-mark" aria-hidden="true"></span>
+          <p class="coordinate" style="margin-top: 16px;">Ways to work together</p>
+          <h2 id="ways-title">Private work, built around what is happening now.</h2>
+          <p>No giant curriculum and no personality transplant. The shape of the work follows the situations you need to handle and the practice that will help.</p>
+        </div>
+        <div class="offer-ledger">
+          <article class="ledger-row">
+            <p class="coordinate">Private work</p>
+            <div><h3>Friendship, communication and belonging.</h3><p>For thoughtful adults who are competent in public and less certain in the parts of life without a job description. Private sessions, real situations, practical experiments and honest debriefs.</p></div>
+          </article>
+          <article id="dating" class="ledger-row">
+            <p class="coordinate">Dating · men</p>
+            <div><h3>An honest female perspective.</h3><p>Profiles, messages, invitations, pacing and how your behaviour may actually be experienced by women. No manipulation, seduction tactics, “alpha” training or guaranteed outcomes.</p></div>
+          </article>
+          <article class="ledger-row">
+            <p class="coordinate">The manner</p>
+            <div><h3>Direct feedback without humiliation.</h3><p>Honesty without cruelty. Compassion without pretending every choice is working. Practical support that respects your intelligence.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="folio reveal" aria-labelledby="ordinary-title">
+      <span class="folio-number">08</span>
+      <span class="folio-route-mark" aria-hidden="true">Repeat</span>
+      <div class="section-intro">
+        <div><p class="coordinate">What practice can make possible</p></div>
         <div>
-          <p class="font-semibold text-stone-900">Julian</p>
-          <p class="text-sm text-stone-500">Subscriber, U.S.</p>
+          <h2 id="ordinary-title">The change is visible in ordinary moments.</h2>
+          <p>The aim is not to become fearless or permanently certain. It is to participate before perfection gives you permission.</p>
         </div>
       </div>
-    </section>
-
-    <section id="contact" class="card blueprint-box reveal mx-auto mt-6 max-w-5xl px-6 py-10 text-center sm:px-10 lg:px-14 lg:py-14">
-      <p class="eyebrow mb-4">Start simple</p>
-      <h2 class="font-display mx-auto max-w-3xl text-4xl font-medium leading-tight text-stone-900 sm:text-5xl">
-        Bring the facts. Leave with a plan.
-      </h2>
-      <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-stone-600">
-        Send a short note about where things feel stuck: dating, friendship, or both. The first conversation is practical, private, and low-pressure.
-      </p>
-      <p class="mx-auto mt-6 max-w-2xl font-display text-2xl italic leading-snug text-stone-800 sm:text-3xl">
-        Clear perspective. Practical next steps. On your side.
-      </p>
-      <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-        <a class="btn-primary w-full sm:w-auto" href="mailto:hello@danayacoaching.com?subject=Coaching%20inquiry">
-          Email hello@danayacoaching.com
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4 4h16v16H4z" />
-            <path d="m22 6-10 7L2 6" />
-          </svg>
-        </a>
-        <a class="btn-secondary w-full sm:w-auto" href="#blueprint">Review the method</a>
+      <div class="ordinary-list">
+        <p class="ordinary-item">The invitation is sent instead of endlessly rehearsed.</p>
+        <p class="ordinary-item">The boundary is stated once — not apologised for six times.</p>
+        <p class="ordinary-item">A mixed signal becomes information, not a verdict on your worth.</p>
+        <p class="ordinary-item">Your calendar begins to contain people you genuinely want to know.</p>
       </div>
     </section>
 
-    <footer class="mx-auto max-w-5xl px-2 py-8 text-center text-sm text-stone-500">
-      <p>Danaya Coaching - Practical advice for dating, friendship, and adult connection.</p>
+    <section class="folio reveal" aria-labelledby="quote-title">
+      <span class="folio-number">09</span>
+      <span class="folio-route-mark" aria-hidden="true">Field evidence</span>
+      <div class="quote-loop">
+        <span class="c-mark" aria-hidden="true"></span>
+        <blockquote id="quote-title">“The practical and sensible way you see life is refreshing. You live in reality. Many people today do not.”</blockquote>
+        <cite>Julian · reader note · United States</cite>
+      </div>
+    </section>
+
+    <section id="contact" class="folio final-note reveal" aria-labelledby="contact-title">
+      <span class="folio-number">10</span>
+      <span class="folio-route-mark" aria-hidden="true">Start</span>
+      <div>
+        <p class="coordinate">People need people · that’s why we practise social courage</p>
+        <h2 id="contact-title">What is the conversation you keep not having?</h2>
+        <p class="section-copy">Send a short note about what is happening, what you have tried and where you keep getting stuck. We will decide whether working together makes sense.</p>
+        <a class="journal-link" href="mailto:chart@withdanaya.com?subject=Private%20work%20with%20Danaya"><span class="c-mark small" aria-hidden="true"></span> Email chart@withdanaya.com <span aria-hidden="true">→</span></a>
+        <p class="fine-print">WITH DANAYA offers private practical support and education. It is not therapy, medical care or a substitute for licensed mental-health treatment. No particular social or romantic outcome is promised.</p>
+      </div>
+    </section>
+
+    <footer class="field-footer">
+      <p><span class="brand-with">WITH</span> <span class="brand-name">DANAYA</span></p>
+      <p><span class="c-mark small" aria-hidden="true"></span></p>
+      <p>People need people. · withdanaya.com</p>
     </footer>
   </main>
 
   <script>
-    const revealEls = document.querySelectorAll('.reveal');
+    const revealElements = document.querySelectorAll('.reveal');
+    const routePaths = [...document.querySelectorAll('[data-route]')];
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    if ('IntersectionObserver' in window) {
+    if ('IntersectionObserver' in window && !reduceMotion) {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -570,12 +1671,41 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-      revealEls.forEach((el) => observer.observe(el));
+      }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
+      revealElements.forEach((element) => observer.observe(element));
     } else {
-      revealEls.forEach((el) => el.classList.add('in-view'));
+      revealElements.forEach((element) => element.classList.add('in-view'));
     }
+
+    routePaths.forEach((path) => {
+      const length = path.getTotalLength();
+      path.dataset.length = length;
+      path.style.strokeDasharray = `${length} ${length}`;
+      path.style.strokeDashoffset = reduceMotion ? 0 : length;
+    });
+
+    let routeFrame;
+    const drawRoute = () => {
+      routeFrame = null;
+      if (reduceMotion) return;
+      const scrollable = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const progress = Math.min(1, Math.max(0, window.scrollY / scrollable));
+      routePaths.forEach((path) => {
+        const start = Number(path.dataset.start || 0);
+        const end = Number(path.dataset.end || 1);
+        const local = Math.min(1, Math.max(0, (progress - start) / Math.max(0.001, end - start)));
+        const length = Number(path.dataset.length || 0);
+        path.style.strokeDashoffset = length * (1 - local);
+      });
+    };
+
+    const requestRouteDraw = () => {
+      if (!routeFrame) routeFrame = requestAnimationFrame(drawRoute);
+    };
+
+    window.addEventListener('scroll', requestRouteDraw, { passive: true });
+    window.addEventListener('resize', requestRouteDraw);
+    drawRoute();
   </script>
 </body>
 </html>
