@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="WITH DANAYA is private, practical work for thoughtful adults who want more friendship, love, belonging and participation in real life." />
-  <meta name="build" content="with-danaya-v09" />
+  <meta name="build" content="with-danaya-v10" />
   <title>WITH DANAYA — People need people</title>
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -1524,6 +1524,46 @@
       transform: translateY(-1px);
     }
 
+    .header-email {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      color: var(--muted);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 180ms ease;
+    }
+
+    .header-email:hover { color: var(--papaya-dark); }
+    .header-email-short { display: none; }
+
+    h1, h2, h3 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+
+    .subtle-c {
+      position: relative;
+      display: inline-block;
+      color: inherit;
+      isolation: isolate;
+    }
+
+    .subtle-word { white-space: nowrap; }
+    .mobile-break { display: none; }
+
+    .subtle-c::after {
+      content: "";
+      position: absolute;
+      inset: 0.1em -0.02em 0.05em -0.03em;
+      z-index: -1;
+      border: 0.055em solid rgba(173, 87, 57, 0.34);
+      border-right-color: transparent;
+      border-radius: 50%;
+      transform: rotate(-12deg);
+    }
+
     .hero-journal { align-items: start; }
 
     .hero-journal .coordinate {
@@ -1579,7 +1619,8 @@
     }
 
     .philosophy-lines span:nth-child(2),
-    .philosophy-lines span:nth-child(4) { color: var(--papaya-dark); }
+    .philosophy-lines span:nth-child(4),
+    .philosophy-lines span:nth-child(5) { color: var(--papaya-dark); }
 
     .practice-promise {
       display: grid;
@@ -1596,9 +1637,21 @@
       letter-spacing: -0.025em;
     }
 
-    .promise-lines span { display: block; margin-bottom: 12px; }
-    .promise-lines span:nth-last-child(2) { margin-top: 30px; color: var(--papaya-dark); }
-    .promise-lines span:last-child { font-style: italic; }
+    .promise-lines > span { display: block; margin-bottom: 12px; }
+    .promise-lines .promise-action { margin-top: 30px; color: var(--papaya-dark); }
+    .promise-lines .promise-together { font-style: italic; }
+
+    .promise-lines .promise-aside {
+      max-width: 690px;
+      margin: 24px 0 28px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: clamp(0.82rem, 1.35vw, 0.98rem);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
 
     .practice-summary {
       padding: 26px 0 0 26px;
@@ -1630,6 +1683,35 @@
 
     .cta-band p { margin: 0; }
     .cta-band .cta-microcopy { margin-top: 6px; text-align: left; }
+
+    .practice-insert {
+      max-width: 820px;
+      margin: clamp(64px, 10vw, 118px) auto 0;
+      padding: clamp(30px, 5vw, 52px);
+      border-left: 2px solid rgba(117, 147, 163, 0.72);
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(117, 147, 163, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(117, 147, 163, 0.08) 1px, transparent 1px),
+        rgba(117, 147, 163, 0.1);
+      background-size: 24px 24px;
+    }
+
+    .practice-insert h3 {
+      margin-bottom: 24px;
+      font-size: clamp(1.8rem, 4.5vw, 3.5rem);
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .practice-insert p {
+      max-width: 620px;
+      margin-bottom: 12px;
+      color: #53616a;
+      line-height: 1.72;
+    }
+
+    .practice-insert p:last-child { margin-bottom: 0; font-family: var(--serif); font-size: 1.2rem; }
 
     .section-cta {
       display: inline-flex;
@@ -1682,6 +1764,7 @@
 
     .belief-copy p { margin: 0; color: var(--muted); line-height: 1.78; }
     .belief-copy strong { color: var(--ink); font-weight: 500; }
+    .belief-item p + p { margin-top: 18px; }
 
     .photo-card {
       display: block;
@@ -1803,6 +1886,7 @@
     .formula-term { display: inline-flex; align-items: center; }
 
     .horseshoe-c {
+      position: relative;
       display: inline-block;
       width: 0.82em;
       height: 0.82em;
@@ -1813,6 +1897,21 @@
       color: var(--papaya-dark);
       transform: rotate(-10deg);
     }
+
+    .horseshoe-c::before,
+    .horseshoe-c::after {
+      content: "";
+      position: absolute;
+      left: 0.02em;
+      width: 0.09em;
+      height: 0.09em;
+      border-radius: 50%;
+      background: var(--cream-solid);
+      box-shadow: 0 0 0 0.032em currentColor;
+    }
+
+    .horseshoe-c::before { top: 0.16em; }
+    .horseshoe-c::after { bottom: 0.16em; }
 
     .formula-plus { color: rgba(117, 147, 163, 0.84); font-family: var(--sans); font-weight: 300; }
 
@@ -1838,6 +1937,26 @@
       align-items: center;
       margin-top: 32px;
     }
+
+    .contact-route-link {
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 180ms ease, transform 180ms ease;
+    }
+
+    .contact-route-link:hover { color: var(--papaya-dark); transform: translateX(2px); }
+    .contact-route-link:active { transform: translateX(3px); }
+
+    .contact-highlight {
+      animation: contact-pulse 900ms ease;
+    }
+
+    @keyframes contact-pulse {
+      0%, 100% { background-color: transparent; }
+      45% { background-color: rgba(223, 129, 91, 0.08); }
+    }
+
+    .mobile-copy { display: none !important; }
 
     .mobile-cta {
       display: none;
@@ -1882,14 +2001,13 @@
     .mobile-cta.is-hidden { display: none !important; }
 
     @media (max-width: 860px) {
-      body { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+      body { padding-bottom: 0; }
       .site-nav { justify-content: flex-start; }
-      .nav-links,
-      .nav-cta { display: none; }
-      .mobile-cta { display: flex; }
+      .nav-links { display: none; }
+      .nav-cta { margin-left: auto; }
+      .header-email { margin-left: auto; }
       .practice-promise,
       .text-support { grid-template-columns: 1fr; }
-      .practice-summary { max-width: 520px; }
       .toolkit-grid { grid-template-columns: 1fr; }
       .toolkit-grid p { min-height: 0; }
       .photo-card { width: min(100%, 520px); }
@@ -1903,6 +2021,16 @@
       .brand { padding-left: 5px; }
       .brand-with,
       .brand-name { font-size: 0.68rem; }
+      .nav-cta { display: none; }
+      .header-email-full { display: none; }
+      .header-email-short { display: inline; }
+      .header-email {
+        min-height: 44px;
+        padding: 0 8px;
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
       .hero-journal .coordinate {
         max-width: 285px;
         font-size: 0.7rem;
@@ -1913,8 +2041,35 @@
         overflow-wrap: normal;
         word-break: normal;
       }
-      .hero-thesis { font-size: clamp(1.55rem, 8vw, 2rem); }
+      .hero-thesis {
+        font-size: clamp(1.28rem, 6.4vw, 1.65rem);
+        letter-spacing: -0.035em;
+      }
+      .desktop-copy { display: none !important; }
+      .mobile-copy { display: block !important; }
+      .mobile-break { display: block; }
+      .promise-lines .promise-aside {
+        width: calc(100% + 14px);
+        max-width: calc(100% + 14px);
+        margin-top: 22px;
+        margin-bottom: 30px;
+        font-size: clamp(0.62rem, 2.8vw, 0.74rem);
+        line-height: 1.48;
+        letter-spacing: -0.015em;
+        text-wrap: balance;
+      }
       .philosophy-lines { font-size: clamp(2.05rem, 11.3vw, 3.2rem); }
+      .voice-toolkit h2 { font-size: clamp(1.55rem, 7.8vw, 2.05rem); line-height: 1.08; }
+      .story-copy h2 { font-size: clamp(1.78rem, 9vw, 2.3rem); line-height: 1.04; }
+      .final-note h2 { font-size: clamp(1.55rem, 7.8vw, 2rem); line-height: 1.06; }
+      .screen-annotation.mobile-copy {
+        width: calc(100% + 26px);
+        max-width: calc(100% + 26px);
+        margin-left: -13px;
+        font-size: 0.66rem;
+        line-height: 1.7;
+        letter-spacing: -0.015em;
+      }
       .statement-list,
       .belief-copy { grid-template-columns: 1fr; }
       .statement-card { min-height: 0; }
@@ -1943,7 +2098,6 @@
         white-space: nowrap;
       }
       .final-cta-wrap { display: flex; width: 100%; min-width: 0; }
-      .mobile-cta a { font-size: 0.72rem; }
     }
 
     @media print {
@@ -1962,7 +2116,11 @@
       <a href="#dating">Dating</a>
       <a href="#about">About</a>
     </div>
-    <a class="nav-cta" href="mailto:chat@withdanaya.com?subject=First%20conversation%20with%20Danaya">Book a first conversation ☎️</a>
+    <a class="header-email" href="mailto:chat@withdanaya.com" data-contact-link aria-label="Email Danaya at chat@withdanaya.com">
+      <span class="header-email-full">chat@withdanaya.com</span>
+      <span class="header-email-short" aria-hidden="true">Email</span>
+    </a>
+    <a class="nav-cta" href="#contact" data-contact-link>Book a first conversation</a>
   </nav>
 
   <main id="top" class="field-book">
@@ -1989,21 +2147,17 @@
       <div>
         <p class="coordinate">Social courage • trust • belonging • joy</p>
         <h1 id="hero-title">People need people.</h1>
-        <p class="hero-thesis">Like any muscle, social courage weakens when it goes unused.</p>
-        <p class="hero-lead">You can be thoughtful, kind and very good at your job — and still hesitate when it is time to text first, ask someone out, set a boundary or let people truly know you.</p>
+        <p class="hero-thesis desktop-copy">Like any muscle, social <span class="subtle-word"><span class="subtle-c">c</span>ourage</span> weakens when it goes unused.</p>
+        <p class="hero-thesis mobile-copy">Like any muscle,<br />social courage weakens<br />when it goes unused.</p>
+        <p class="hero-lead desktop-copy">You can be thoughtful, kind and very good at your job — and still hesitate when it is time to text first, ask someone out, set a boundary or let people truly know you.</p>
+        <p class="hero-lead mobile-copy">You can be thoughtful, kind and very good at your job —<br />and still hesitate when it is<br />time to text first,<br />ask someone out,<br />set a boundary, or<br />let people truly know you.</p>
         <p class="hero-lead">I help with the real-life part.</p>
         <a class="journal-link" href="#field-notes"><span class="c-mark small" aria-hidden="true"></span> Open the notebook <span aria-hidden="true">↓</span></a>
       </div>
       <aside class="practice-note" aria-label="How Danaya and a client practise courage together">
-        <p class="practice-statement">
-          <span>I won’t lecture you.</span>
-          <span>I won’t try to motivate you.</span>
-          <span>You probably have plenty of motivation already.</span>
-        </p>
-        <p class="practice-explanation">We’ll practise the reps that build the strength to be vulnerable.</p>
-        <p class="practice-explanation">Together.</p>
-        <a class="practice-cta" href="mailto:chat@withdanaya.com?subject=First%20conversation%20with%20Danaya">Book a first conversation ☎️</a>
-        <p class="cta-microcopy">A preliminary call to see whether the fit makes sense.</p>
+        <p class="practice-statement">The conversation you keep not having is probably where we start.</p>
+        <p class="practice-explanation">Bring the real situation. We can decide together whether working together makes sense.</p>
+        <a class="practice-cta" href="#contact" data-contact-link>Start a conversation</a>
       </aside>
     </section>
 
@@ -2016,8 +2170,8 @@
           <p class="coordinate" style="margin-top: 16px;">Observed in real life</p>
         </div>
         <div>
-          <h2 id="field-notes-title">Social courage grows through practice.</h2>
-          <p>I work with what is actually happening: the message you cannot send, the friendship you keep meaning to revive, the invitation you are afraid to make and the boundary that becomes a five-paragraph apology.</p>
+          <h2 id="field-notes-title">Social <span class="subtle-word"><span class="subtle-c">c</span>ourage</span> grows through practice.</h2>
+          <p>I work with what is actually happening: the message you cannot send, the friendship you keep meaning to revive, the&nbsp;invitation you are afraid to&nbsp;make and&nbsp;the boundary that becomes a five-paragraph apology.</p>
         </div>
       </div>
 
@@ -2040,13 +2194,20 @@
         <article class="statement-card">
           <p class="coordinate">Dating · men · 04</p>
           <h3>Ask her out.</h3>
-          <p>Make the invitation, pay attention to the answer and let the answer become information rather than a verdict on your worth.</p>
+          <p>Make the invitation, pay attention to the answer and&nbsp;let the answer become information rather than a&nbsp;verdict on your worth.</p>
         </article>
       </div>
 
       <div class="belief-copy">
-        <p><strong>You do not have to choose between being kind and having boundaries.</strong> I help you find the line between being agreeable and becoming a pushover — so you can stay warm, considerate and easy to be around without betraying yourself.</p>
-        <p>This work is less about becoming a “better” person and more about becoming more honest with yourself. We can spend years shaping ourselves around what we think other people want. The work is peeling those layers back until your own values become visible again.</p>
+        <div class="belief-item">
+          <p><strong>You do not have to choose between being kind and having boundaries.</strong></p>
+          <p>I help you find the line between being agreeable and becoming a pushover — so you can stay warm, considerate and&nbsp;easy to be around without betraying yourself.</p>
+        </div>
+        <div class="belief-item">
+          <p>This work is less about becoming a “better” person and more about becoming more honest with yourself.</p>
+          <p>We can spend years shaping ourselves around what we think other people want.</p>
+          <p>The work is peeling those layers back until your own values become visible again.</p>
+        </div>
       </div>
     </section>
 
@@ -2057,9 +2218,10 @@
         <p class="coordinate">The central idea</p>
         <h2 id="philosophy-title" class="philosophy-lines">
           <span>People need people.</span>
-          <span>That’s why I help people practise social courage.</span>
+          <span>That’s why <br class="mobile-break" />I help people practise <br class="mobile-break" />social courage.</span>
           <span>Not because confidence is impressive.</span>
-          <span>Because relationships are what make a life feel lived.</span>
+          <span class="desktop-copy">Because relationships are what make a life feel lived.</span>
+          <span class="mobile-copy">Because<br />relationships<br />are what make<br />a life feel lived.</span>
         </h2>
       </div>
     </section>
@@ -2071,27 +2233,28 @@
         <div>
           <p class="coordinate">The practice · social courage</p>
           <h2 id="practice-title" class="promise-lines">
-            <span>I won’t lecture you.</span>
-            <span>I won’t try to motivate you.</span>
-            <span>You probably have plenty of motivation already.</span>
-            <span>We’ll practise the reps that build the strength to be vulnerable.</span>
-            <span>Together.</span>
+            <span>I won’t <br class="mobile-break" />lecture you.</span>
+            <span>I won’t try <br class="mobile-break" />to motivate you.</span>
+            <span class="promise-aside">(I bet you’ve got plenty of your own motivation. You could bottle it and sell it if anyone were after it.)</span>
+            <span class="promise-action">We’ll practise <br class="mobile-break" />the reps that build <br class="mobile-break" />the strength <br class="mobile-break" />to be vulnerable.</span>
+            <span class="promise-together">Together.</span>
           </h2>
         </div>
-        <aside class="practice-summary">
-          <p class="big-note">I don’t motivate.<br />We practise.</p>
-          <p>One brave rep at a time.</p>
-          <p>Practise before it matters. Keep your social muscle warm. Try the words, notice how they land, adjust and try again.</p>
-          <p>I’ll practise with you.</p>
-        </aside>
       </div>
       <div class="cta-band">
         <div>
-          <p><strong>Ready to name the conversation you keep avoiding?</strong></p>
+          <p><strong>Ready to name the&nbsp;conversation you keep avoiding?</strong></p>
           <p class="cta-microcopy">A preliminary call to see whether the fit makes sense.</p>
         </div>
-        <a class="section-cta" href="mailto:chat@withdanaya.com?subject=First%20conversation%20with%20Danaya">Book a first conversation ☎️</a>
+        <a class="section-cta" href="#contact" data-contact-link>Book a first conversation</a>
       </div>
+      <aside class="practice-insert" aria-label="Practice before it matters">
+        <h3>Practise before it matters.</h3>
+        <p>Keep your social muscle warm.</p>
+        <p>Try the words, notice how they land, adjust and try again.</p>
+        <p>One brave rep at a time.</p>
+        <p>I’ll practise with you.</p>
+      </aside>
     </section>
 
     <section class="folio reveal" aria-labelledby="voice-title">
@@ -2099,13 +2262,13 @@
       <span class="folio-route-mark" aria-hidden="true">Route A</span>
       <div class="voice-toolkit">
         <p class="coordinate">The full toolkit</p>
-        <h2 id="voice-title">Voice, delivery and nonverbal communication — so you’re understood the way you intend.</h2>
+        <h2 id="voice-title"><span class="desktop-copy">Voice, delivery and nonverbal <span class="subtle-word"><span class="subtle-c">c</span>ommunication</span> — so you’re understood the way you intend.</span><span class="mobile-copy">Voice, delivery<br />and nonverbal<br /><span class="subtle-word"><span class="subtle-c">c</span>ommunication</span> —<br />so you’re understood<br />the way you intend.</span></h2>
         <p class="section-copy">What to say. How to say it. And how to stop second-guessing yourself.</p>
       </div>
       <div class="toolkit-grid">
-        <p><strong>Voice and pacing.</strong><br />A trained radio-news voice informs practical work on tone, rhythm, clarity and vocal delivery.</p>
-        <p><strong>Posture and presence.</strong><br />Notice nervous habits, body language and the difference between what you intend and what another person may perceive.</p>
-        <p><strong>Difficult conversations.</strong><br />Practise the words, delivery and nonverbal communication together before the moment matters.</p>
+        <p><strong>Voice and pacing.</strong><br />A trained radio-news voice informs practical work on tone, rhythm, clarity and&nbsp;vocal delivery.</p>
+        <p><strong>Posture and presence.</strong><br />Notice nervous habits, body language and&nbsp;the&nbsp;difference between what you intend and&nbsp;what another person may perceive.</p>
+        <p><strong>Difficult conversations.</strong><br />Practise the words, delivery and nonverbal communication together before the&nbsp;moment matters.</p>
       </div>
     </section>
 
@@ -2122,11 +2285,11 @@
         <div class="story-copy">
           <span class="c-mark" aria-hidden="true"></span>
           <p class="coordinate" style="margin-top: 16px;">Meet Danaya</p>
-          <h2 id="about-title">I’m a wallflower turned sunflower.</h2>
-          <p>I grew up in post-Soviet Kazakhstan and moved through six or eight different schools. Social ease did not come intuitively to me. I learnt by watching closely, noticing patterns, trying, repairing and trying again.</p>
+          <h2 id="about-title"><span class="desktop-copy">I’m a wallflower turned sunflower.</span><span class="mobile-copy">I’m<br />a wallflower<br />turned sunflower.</span></h2>
+          <p>I grew up in post-Soviet Kazakhstan and moved through six or eight different schools. Social ease did not come intuitively to me. I learnt by watching closely, noticing patterns, trying, repairing and&nbsp;trying again.</p>
           <p>I processed emotions logically before they became intuitive. After enough real-life reps in protecting my peace, setting boundaries and choosing joy, what I once had to calculate began to feel natural.</p>
-          <p><strong>What I learnt consciously, I can now explain consciously.</strong></p>
-          <p>The work is rational and compassionate. Honest without cruelty. Serious — but never so solemn that you and I cannot laugh at the absurdity of being human.</p>
+          <p><strong>What I learnt consciously, I&nbsp;can now explain consciously.</strong></p>
+          <p>The work is rational <span class="subtle-word">and&nbsp;<span class="subtle-c">c</span>ompassionate</span>. Honest without cruelty. Serious — but never so solemn that you and&nbsp;I&nbsp;cannot laugh at the&nbsp;absurdity of being human.</p>
         </div>
       </div>
     </section>
@@ -2139,17 +2302,17 @@
           <span class="c-mark" aria-hidden="true"></span>
           <p class="coordinate" style="margin-top: 16px;">An honest female perspective</p>
           <h2 id="dating-title">Dating can feel unusually high-risk for men.</h2>
-          <p>You are often expected to initiate, read the room, risk rejection and remain relaxed through all of it. I understand why good men hesitate.</p>
-          <p>I help you approach with clarity, respect and enough courage to participate without treating every interaction like a verdict on your worth.</p>
+          <p>You are often expected to&nbsp;initiate, read the room, risk rejection and remain relaxed through all of it. I understand why good men hesitate.</p>
+          <p>I help you approach with clarity, respect and enough courage to participate without treating every interaction like a&nbsp;verdict on your worth.</p>
         </div>
         <div class="offer-ledger">
           <article class="ledger-row">
             <p class="coordinate">In your corner</p>
-            <div><h3>A woman’s honest perspective.</h3><p>I help good men understand how their behaviour may land — supportive without manipulation, humiliation or seduction tactics.</p></div>
+            <div><h3>A woman’s honest perspective.</h3><p>I help good men understand how their behaviour may land — supportive without manipulation, humiliation or&nbsp;seduction tactics.</p></div>
           </article>
           <article class="ledger-row">
             <p class="coordinate">Real practice</p>
-            <div><h3>Approach with clarity and respect.</h3><p>Profiles, messages, invitations, pacing and difficult conversations — practised without turning another person into a puzzle to win.</p></div>
+            <div><h3 class="desktop-copy">Approach with clarity and respect.</h3><h3 class="mobile-copy">Approach with<br />clarity and respect.</h3><p>Profiles, messages, invitations, pacing and difficult conversations — practised without turning another person into a puzzle to win.</p></div>
           </article>
           <article class="ledger-row">
             <p class="coordinate">The truth</p>
@@ -2188,10 +2351,9 @@
           <ul class="support-moments">
             <li>Before the difficult conversation.</li>
             <li>After the date.</li>
-            <li>When you are wondering whether it is a real problem or overthinking.</li>
+            <li>When you are wondering whether it is a real problem or&nbsp;overthinking.</li>
             <li>When you are about to back out of the brave thing.</li>
           </ul>
-          <p class="support-boundary">Text support is included during the programme. Voice notes are not part of the service. Response boundaries and expected response time will be stated before engagement.</p>
         </div>
       </div>
     </section>
@@ -2200,56 +2362,50 @@
       <span class="folio-number">09</span>
       <span class="folio-route-mark" aria-hidden="true">Repeat</span>
       <div>
-        <p class="coordinate">One brave rep at a time</p>
+        <p class="coordinate">What changes in real life</p>
         <h2 id="ordinary-title">Social courage is <em>trainable.</em></h2>
-        <p class="screen-annotation">The invitation gets sent. The boundary is stated once. The difficult conversation becomes a conversation, not a private epic.</p>
+        <p class="screen-annotation desktop-copy">The invitation gets sent. The boundary is stated once. The difficult conversation becomes a conversation, not a private epic.</p>
+        <p class="screen-annotation mobile-copy">The invitation gets sent.<br />The boundary is stated once.<br />The difficult conversation becomes a conversation,<br />not a private epic.</p>
       </div>
     </section>
 
     <section id="contact" class="folio final-note reveal" aria-labelledby="contact-title">
       <span class="folio-number">10</span>
-      <span class="folio-route-mark" aria-hidden="true">Start</span>
+      <a class="folio-route-mark contact-route-link" href="#contact" data-contact-link>Start</a>
       <div>
         <p class="coordinate">Social courage · a first conversation</p>
-        <h2 id="contact-title">What is the conversation you keep not having?</h2>
+        <h2 id="contact-title" tabindex="-1"><span class="desktop-copy">WHAT IS THE CONVERSATION YOU KEEP NOT HAVING?</span><span class="mobile-copy">WHAT IS<br />THE CONVERSATION<br />YOU KEEP NOT<br />HAVING?</span></h2>
         <p class="section-copy">Send me a short note about what is happening, what you have tried and where you keep getting stuck.</p>
         <p class="section-copy" style="margin-top: 14px;">On the call, you and I can decide whether working together makes sense.</p>
         <div class="final-cta-wrap">
-          <a class="section-cta" href="mailto:chat@withdanaya.com?subject=First%20conversation%20with%20Danaya">Book a first conversation ☎️</a>
-          <p class="cta-microcopy">A preliminary call to see whether the fit makes sense.</p>
+          <a class="section-cta" href="mailto:chat@withdanaya.com?subject=First%20conversation%20with%20Danaya">Email Danaya</a>
         </div>
-        <p class="fine-print">WITH DANAYA offers private practical support and education. It is not therapy, medical care or a substitute for licensed mental-health treatment. No particular social or romantic outcome is promised.</p>
       </div>
     </section>
 
     <footer class="field-footer">
       <p><span class="brand-with">WITH</span> <span class="brand-name">DANAYA</span></p>
       <p><span class="c-mark small" aria-hidden="true"></span></p>
-      <p>People need people. · <a href="mailto:chat@withdanaya.com">chat@withdanaya.com</a></p>
+      <p>People need people. · <a href="#contact" data-contact-link>chat@withdanaya.com</a></p>
     </footer>
   </main>
-
-  <aside class="mobile-cta" id="mobile-cta" aria-label="Booking invitation">
-    <a href="mailto:chat@withdanaya.com?subject=First%20conversation%20with%20Danaya">Book a first conversation ☎️</a>
-    <button type="button" aria-label="Minimise booking invitation" onclick="hideMobileCta()">×</button>
-  </aside>
 
   <script>
     const revealElements = document.querySelectorAll('.reveal');
     const routePaths = [...document.querySelectorAll('[data-route]')];
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const mobileCta = document.getElementById('mobile-cta');
+    const contactSection = document.getElementById('contact');
+    const contactTitle = document.getElementById('contact-title');
 
-    const hideMobileCta = () => {
-      mobileCta?.classList.add('is-hidden');
-      try { sessionStorage.setItem('with-danaya-mobile-cta-hidden', 'true'); } catch (error) {}
-    };
-
-    try {
-      if (sessionStorage.getItem('with-danaya-mobile-cta-hidden') === 'true') {
-        mobileCta?.classList.add('is-hidden');
-      }
-    } catch (error) {}
+    document.querySelectorAll('[data-contact-link]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        contactSection?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+        contactSection?.classList.remove('contact-highlight');
+        requestAnimationFrame(() => contactSection?.classList.add('contact-highlight'));
+        window.setTimeout(() => contactTitle?.focus({ preventScroll: true }), reduceMotion ? 0 : 650);
+      });
+    });
 
     if ('IntersectionObserver' in window && !reduceMotion) {
       const observer = new IntersectionObserver((entries) => {
