@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Practical social courage and relationship coaching with Danaya Yerzhanova—for thoughtful adults who want stronger friendships, clearer communication, dating confidence and real-life connection." />
   <meta name="robots" content="noindex, follow" />
-  <meta name="build" content="with-danaya-v11" />
+  <meta name="build" content="with-danaya-v13" />
   <title>Social Courage &amp; Relationship Coaching | WITH DANAYA</title>
   <link rel="canonical" href="https://withdanaya.com/" />
   <script>document.documentElement.classList.add('js');</script>
@@ -1591,6 +1591,42 @@
 
     .practice-explanation + .practice-explanation { margin-top: 13px; }
 
+    .fish-interlude {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+      gap: clamp(34px, 7vw, 88px);
+      align-items: center;
+      margin: 0;
+      padding: clamp(52px, 8vw, 94px) clamp(38px, 8vw, 108px);
+      overflow: hidden;
+      border-top: 1px solid rgba(69, 54, 42, 0.16);
+      border-bottom: 1px solid rgba(69, 54, 42, 0.16);
+      background: rgba(255, 250, 244, 0.76);
+    }
+
+    .fish-interlude img {
+      display: block;
+      width: 100%;
+      height: auto;
+      mix-blend-mode: multiply;
+    }
+
+    .fish-interlude figcaption {
+      padding: 22px 0 22px clamp(24px, 4vw, 42px);
+      border-left: 1px solid rgba(117, 147, 163, 0.5);
+    }
+
+    .fish-interlude .coordinate { margin-bottom: 18px; }
+
+    .fish-question {
+      max-width: 11ch;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.15rem, 4.6vw, 4.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+    }
+
     .cta-microcopy {
       margin: 11px 0 0;
       color: var(--muted);
@@ -2026,6 +2062,9 @@
       .toolkit-grid { grid-template-columns: 1fr; }
       .toolkit-grid p { min-height: 0; }
       .photo-card { width: min(100%, 520px); }
+      .fish-interlude { grid-template-columns: 1fr; }
+      .fish-interlude img { width: min(100%, 680px); margin: 0 auto; }
+      .fish-interlude figcaption { max-width: 620px; }
     }
 
     @media (max-width: 600px) {
@@ -2113,6 +2152,9 @@
         white-space: nowrap;
       }
       .final-cta-wrap { display: flex; width: 100%; min-width: 0; }
+      .fish-interlude { padding: 50px 26px 58px 42px; }
+      .fish-interlude figcaption { padding: 20px 0 0; border-top: 1px solid rgba(117, 147, 163, 0.5); border-left: 0; }
+      .fish-question { max-width: 12ch; font-size: clamp(2rem, 10.6vw, 3rem); }
     }
 
     @media print {
@@ -2226,6 +2268,14 @@
         </div>
       </div>
     </section>
+
+    <figure class="fish-interlude reveal">
+      <img src="assets/fish-loneliness.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="A solitary person fishing from a small boat above a sea crowded with fish." />
+      <figcaption>
+        <p class="coordinate">Field note · belonging</p>
+        <p class="fish-question">There are plenty of fish in the sea. Why does it still feel so lonely?</p>
+      </figcaption>
+    </figure>
 
     <section class="folio philosophy reveal" aria-labelledby="philosophy-title">
       <span class="folio-number">03</span>
@@ -2395,7 +2445,7 @@
         <p class="section-copy">Send me a short note about what is happening, what you have tried and where you keep getting stuck.</p>
         <p class="section-copy" style="margin-top: 14px;">On the call, you and I can decide whether working together makes sense.</p>
         <div class="final-cta-wrap">
-          <a class="section-cta" href="mailto:chart@withdanaya.com?subject=First%20conversation%20with%20Danaya">Email Danaya</a>
+          <a class="section-cta" href="https://app.lifecoachhub.com/book/danaya-yerzhanova">Book a free 30-minute call</a>
         </div>
       </div>
     </section>
@@ -2403,7 +2453,7 @@
     <footer class="field-footer">
       <p><span class="brand-with">WITH</span> <span class="brand-name">DANAYA</span></p>
       <p><span class="c-mark small" aria-hidden="true"></span></p>
-      <p>People need people. · <a href="/insights/">Insights</a> · <a href="https://www.instagram.com/danaya_papaya/" rel="me">Instagram</a> · <a href="#contact" data-contact-link>chart@withdanaya.com</a></p>
+      <p>People need people. · <a href="/insights/">Insights</a> · <a href="https://www.instagram.com/danaya_papaya/" rel="me">Instagram</a> · <a href="https://www.threads.com/@danaya_papaya" rel="me">Threads</a> · <a href="#contact" data-contact-link>chart@withdanaya.com</a></p>
     </footer>
   </main>
 
